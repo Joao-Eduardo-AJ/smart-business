@@ -9,7 +9,7 @@ interface ILogo {
 export const Logo = ({ logoColor }: ILogo) => {
   const [flowDirection, setFlowDirection] = useState(false);
   return (
-    <div className="flex flex-row justify-center items-center w-136 gap-2">
+    <div className="flex flex-row justify-center items-center w-140h-32 gap-2">
       <div
         onMouseOver={() => setFlowDirection(true)}
         onMouseOut={() => setFlowDirection(false)}
@@ -31,7 +31,7 @@ export const Logo = ({ logoColor }: ILogo) => {
             />
           )
         ) : (
-          <Image src="icons/logo.svg" width={22} height={19} alt="" />
+          <Image src="icons/logo.svg" width={22} height={19} alt="logo" />
         )}
       </div>
       <div className="flex flex-row text-sm sm:flex-col sm:text-xs leading-4 tracking-wide">

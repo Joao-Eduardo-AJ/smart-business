@@ -189,6 +189,9 @@ const config: Config = {
         "360": "22.5rem",
       },
     },
+    fontSize: {
+      "3.5xl": "2rem",
+    },
     plugins: [],
   },
 };
