@@ -9,8 +9,8 @@ const mainFontFamily = Archivo({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html className={mainFontFamily.className}>
-      <body>{children}</body>
+    <html lang="pt-br" className={mainFontFamily.className}>
+      <body className="bg-neutral001">{children}</body>
     </html>
   );
 }

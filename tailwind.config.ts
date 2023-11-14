@@ -17,6 +17,8 @@ const config: Config = {
       auxiliaryGreen: "#35D9A8",
       auxiliaryYellow: "#FFD76F",
 
+      white: "#FFFFFF",
+
       neutral001: "#F2F5FC",
       neutral002: "#CBD6E2",
 
@@ -184,6 +186,7 @@ const config: Config = {
         "314": "19.625rem",
         "316": "19.75rem",
         "318": "19.875rem",
+        "360": "22.5rem",
       },
     },
     plugins: [],
