@@ -1,7 +1,7 @@
 export const Texts = {
   // topbar and header
-  TOP_BAR_CONTENT:
-    "Month of digital, take the opportunity to be part of SmartBusiness!",
+  TOP_BAR_CONTENT: "Month of digital, take the opportunity to",
+  MAKE_PART: "be part of SmartBusiness!",
   ACCESS_BUTTON: "Access",
   REGISTER_BUTTON: "Register for free",
 
