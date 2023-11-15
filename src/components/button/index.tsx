@@ -8,7 +8,7 @@ const button = tv({
   base: "px-2 flex items-center justify-center text-sm gap-3",
   variants: {
     type: {
-      text: "h-56 min-w-full transition duration-500 hover:bg-neutral002",
+      text: "h-56 min-w-full text-neutral500 transition duration-500 hover:bg-neutral002",
       contained: "bg-primaryDefault text-white h-56 min-w-full",
       outlined:
         "border overflow-hidden transition-all border-primaryDefault duration-500 w-226 h-42 text-primaryDefault relative hover:bg-primaryDefault hover:text-white hover:w-260",
