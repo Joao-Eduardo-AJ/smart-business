@@ -37,11 +37,11 @@ export const Texts = {
 
   // know-how section
   UNDERSTAND_HOW: "Entiende cómo funciona",
-  HOW_WE_APPLY_OUR_TECH: "Ve cómo aplicamos nuestra tecnología",
+  HOW_WE_APPLY_OUR_TECH: "Ve cómo aplicamos nuestra metodología",
   SALES_MADE: "ventas realizadas",
 
   FIRST_STEP: "Regístrate en nuestro sitio",
-  ABOUT_FIRST_STEP: "Ultricies sed leo ac vel lectus nisi vestibulum",
+  ABOUT_FIRST_STEP: "Ultricies sed leo ac vel lectus nisi vestibu",
 
   SECOND_STEP: "Selecciona un producto ",
   ABOUT_SECOND_STEP: "Eros lorem ac viverra donec velit.",
@@ -49,8 +49,8 @@ export const Texts = {
   THIRD_STEP: "Realiza la venta pleo Instagram",
   ABOUT_THIRD_STEP: "Purus potenti ac elementum odio nulla",
 
-  FORTH_STEP: "Acompaña tus rendimientos",
-  ABOUT_FORTH_STEP: "Ipsum varius egestas pharetra viverra.",
+  FOURTH_STEP: "Acompaña tus rendimientos",
+  ABOUT_FOURTH_STEP: "Ipsum varius egestas pharetra viverra.",
 
   LAST_STEP: "Comparte con tu equipo",
   ABOUT_LAST_STEP: "Ipsum varius egestas pharetra viverra.",

@@ -37,11 +37,11 @@ export const Texts = {
 
   // know how section
   UNDERSTAND_HOW: "Understand how it works",
-  HOW_WE_APPLY_OUR_TECH: "See how we apply our technology",
+  HOW_WE_APPLY_OUR_TECH: "See how we apply our methodology",
   SALES_MADE: "sales made",
 
   FIRST_STEP: "Sign up on our website",
-  ABOUT_FIRST_STEP: "Ultricies sed leo ac vel lectus nisi vestibulum",
+  ABOUT_FIRST_STEP: "Ultricies sed leo ac vel lectus nisi vestibu",
 
   SECOND_STEP: "Select a product",
   ABOUT_SECOND_STEP: "Eros lorem ac viverra donec velit.",
@@ -49,8 +49,8 @@ export const Texts = {
   THIRD_STEP: "Make the sale through Instagram",
   ABOUT_THIRD_STEP: "Purus potenti ac elementum odio nulla",
 
-  FORTH_STEP: "Track your earnings",
-  ABOUT_FORTH_STEP: "Ipsum varius egestas pharetra viverra.",
+  FOURTH_STEP: "Track your earnings",
+  ABOUT_FOURTH_STEP: "Ipsum varius egestas pharetra viverra.",
 
   LAST_STEP: "Share with your team",
   ABOUT_LAST_STEP: "Ipsum varius egestas pharetra viverra.",
