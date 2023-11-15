@@ -11,6 +11,10 @@ import { Writer } from "@/components/writer";
 import { AnnualProfit } from "@/components/annual-profit";
 import { IconChat } from "@/components/icon-chat";
 import { Metrics } from "@/components/metrics";
+import { CheckedTopic } from "@/components/checked-topic";
+import { PlayButton } from "@/components/play-button";
+import { WomanPhone } from "@/components/woman-phone";
+import { NextPageIcon } from "@/components/next-page-icon";
 
 const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
@@ -101,15 +105,7 @@ const Home = () => {
                 <span>{texts.CONTACT_US_BUTTON}</span>
               </Button.Root>
             </div>
-            {pageWidth > 1440 && (
-              <Image
-                src="icons/arrow-down.svg"
-                alt="arrow down"
-                width={16}
-                height={28}
-                className="mt-70 mb-130"
-              />
-            )}
+            {pageWidth > 1440 && <NextPageIcon className="mt-70 mb-130" />}
           </div>
           <Image
             src="images/man.svg"
@@ -126,12 +122,8 @@ const Home = () => {
           <Image
             src="assets/pipe-xl.svg"
             alt="pipe xl"
-            width={
-              112 /* pageWidth < 985 ? 420 : pageWidth < 1440 ? 650 : 1400 */
-            }
-            height={
-              56 /* pageWidth < 985 ? 420 : pageWidth < 1440 ? 650 : 1400 */
-            }
+            width={112}
+            height={56}
             className="absolute top-0 left-0"
           />
           <div className="flex flex-col items-center gap-4 xl:items-start">
@@ -182,6 +174,58 @@ const Home = () => {
             className="absolute -bottom-80 -right-40 lg:bottom-0 lg:right-0"
           />
         </section>
+        <article className="bg-white py-64 px-24 w-full text-neutral400 text-center flex flex-col items-center z-0 gap-40 lg:relative lg:flex-row lg:py-120 lg:px-112 lg:items-start lg:justify-between">
+          <div>
+            <header className="flex flex-col gap-4 items-center lg:items-start lg:text-start">
+              <p className="text-primaryDefault font-semibold text-sd1">
+                {texts.ABOUT_COMPANY}
+              </p>
+              <h2 className="text-neutral700 text-md2/7 w-210 lg:w-full lg:text-3.5xl/9 xl:text-6xl/tight xl:w-480">
+                {texts.CREATING_INNOATING}
+              </h2>
+            </header>
+            <div className="flex flex-col gap-24 mt-40 lg:w-max">
+              <CheckedTopic text={texts.FIRST_TOPIC} />
+              <CheckedTopic text={texts.SECOND_TOPIC} />
+              <CheckedTopic text={texts.THIRD_TOPIC} />
+            </div>
+            {pageWidth > 1440 && <NextPageIcon className="mt-254" />}
+          </div>
+          <div className="flex flex-col gap-48 items-center lg:w-560 xl:w-696">
+            <figure className="relative">
+              <Image
+                src="images/video-group.svg"
+                alt="video"
+                width={pageWidth < 985 ? 312 : 1000}
+                height={pageWidth < 985 ? 176 : 1000}
+                className="shadow-video lg:shadow-videoXl"
+              />
+              <PlayButton pageWidth={pageWidth} />
+            </figure>
+            <div className="flex flex-col gap-28 items-center lg:text-start w-328 lg:w-full lg:text-md">
+              <p>
+                Suscipit pellentesque praesent auctor molestie massa nunc vitae.
+                Felis eget est ut gravida in maecenas. Tempus in in in congue
+                proin.
+              </p>
+              <p>
+                Sem in feugiat id dui bibendum. Nunc ut mauris congue amet.
+                Facilisis amet enim pellentesque eu suspendisse diam sit.
+                Bibendum pharetra malesuada aliquam hendrerit consectetur neque.{" "}
+                <span className="font-semibold">
+                  Gravida rhoncus enim a sodales
+                </span>{" "}
+                feugiat senectus aenean felis. Vitae purus, amet semper
+                pulvinar.
+              </p>
+            </div>
+          </div>
+          <WomanPhone
+            pageWidth={pageWidth}
+            className="lg:absolute lg: bottom-120 lg:left-282 xl:left-320"
+          />
+        </article>
+        <section></section>
       </main>
     </RootLayout>
   );
