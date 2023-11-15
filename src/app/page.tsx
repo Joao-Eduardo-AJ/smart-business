@@ -16,11 +16,23 @@ import { PlayButton } from "@/components/play-button";
 import { WomanPhone } from "@/components/woman-phone";
 import { NextPageIcon } from "@/components/next-page-icon";
 import { Clients } from "@/components/clients-section";
+import { SubTitleArticle } from "@/components/article-subtitle";
+import { TitleArticle } from "@/components/article-title";
+import { HeaderArticle } from "@/components/article-header";
+import { HowItemList } from "@/components/how-item-list";
+import { Article } from "@/components/article";
 
 const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
   const [pageWidth, setPageWidth] = useState(0);
   const texts = TextsProvider.get();
+  const howWeTech: { item: string; subItem: string }[] = [
+    { item: texts.FIRST_STEP, subItem: texts.ABOUT_FIRST_STEP },
+    { item: texts.SECOND_STEP, subItem: texts.ABOUT_SECOND_STEP },
+    { item: texts.THIRD_STEP, subItem: texts.ABOUT_THIRD_STEP },
+    { item: texts.FOURTH_STEP, subItem: texts.ABOUT_FOURTH_STEP },
+    { item: texts.LAST_STEP, subItem: texts.ABOUT_LAST_STEP },
+  ];
 
   useEffect(() => {
     function handleResize() {
@@ -175,16 +187,12 @@ const Home = () => {
             className="absolute -bottom-80 -right-40 lg:bottom-0 lg:right-0"
           />
         </section>
-        <article className="bg-white py-64 px-24 w-full text-neutral400 text-center flex flex-col items-center z-0 gap-40 lg:relative lg:flex-row lg:py-120 lg:px-112 lg:items-start lg:justify-between">
+        <Article>
           <div>
-            <header className="flex flex-col gap-4 items-center lg:items-start lg:text-start">
-              <p className="text-primaryDefault font-semibold text-sd1">
-                {texts.ABOUT_COMPANY}
-              </p>
-              <h2 className="text-neutral700 text-md2/7 w-210 lg:w-full lg:text-3.5xl/9 xl:text-6xl/tight xl:w-480">
-                {texts.CREATING_INNOATING}
-              </h2>
-            </header>
+            <HeaderArticle>
+              <TitleArticle>{texts.ABOUT_COMPANY}</TitleArticle>
+              <SubTitleArticle>{texts.CREATING_INNOATING}</SubTitleArticle>
+            </HeaderArticle>
             <div className="flex flex-col gap-24 mt-40 lg:w-max">
               <CheckedTopic text={texts.FIRST_TOPIC} />
               <CheckedTopic text={texts.SECOND_TOPIC} />
@@ -225,8 +233,49 @@ const Home = () => {
             pageWidth={pageWidth}
             className="lg:absolute lg: bottom-120 lg:left-282 xl:left-320"
           />
-        </article>
+        </Article>
         <Clients pageWidth={pageWidth} />
+        <Article>
+          <HeaderArticle>
+            <TitleArticle>{texts.UNDERSTAND_HOW}</TitleArticle>
+            <SubTitleArticle>{texts.HOW_WE_APPLY_OUR_TECH}</SubTitleArticle>
+          </HeaderArticle>
+          <ul className="flex flex-col gap-46 relative xl:my-60 xl:mr-34">
+            {howWeTech.map((el, index) => (
+              <HowItemList
+                key={index}
+                item={el.item}
+                subItem={el.subItem}
+                isLastItem={howWeTech.length === index + 1}
+                index={index + 1}
+                pageWidth={pageWidth}
+              />
+            ))}
+            <Image
+              src="assets/dotted-pipe.svg"
+              alt="dotted pipe"
+              width={pageWidth < 1440 ? 2 : 2.5}
+              height={322}
+              className="absolute top-0 left-21 -z-10 xl:left-30"
+            />
+          </ul>
+          <figure className="flex items-end gap-4 overflow-hidden lg:absolute lg:bottom-120 lg:left-112 xl:left-10">
+            <Image
+              src="images/sales.svg"
+              alt="sales"
+              width={pageWidth < 985 ? 97 : pageWidth < 1440 ? 127 : 176}
+              height={pageWidth < 985 ? 107 : pageWidth < 1440 ? 137 : 195}
+              className="shadow-sales"
+            />
+            <Image
+              src="images/device.svg"
+              alt="device"
+              width={pageWidth < 985 ? 272 : pageWidth < 1440 ? 240 : 354}
+              height={pageWidth < 985 ? 254 : pageWidth < 1440 ? 220 : 446}
+              className="bg-neutral001"
+            />
+          </figure>
+        </Article>
       </main>
     </RootLayout>
   );
