@@ -20,7 +20,7 @@ export const Texts = {
 
   // feedback section
   FEEDBACK_QUOTE:
-    "Quis sed commodo est aliquam, praesent fames pretium quam. Nisi, massa of tipe tincidunt week.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mi nunc, orci urna duis accumsan. Scelerisque purus dolor risus.",
   PROJECTS_CARRIED_OUT: "Projects carried out",
   BRAZILIAN_OFFICES: "Offices in Brazil",
   INVOICING: "Invoicing",
