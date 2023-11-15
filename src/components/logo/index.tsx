@@ -20,14 +20,14 @@ export const Logo = ({ logoColor }: ILogo) => {
               autoplay
               keepLastFrame
               src={`lottie/flow-begin-end-${logoColor}.json`}
-              style={{ width: "32px" }}
+              style={{ width: "34px" }}
             />
           ) : (
             <Player
               autoplay
               keepLastFrame
               src={`lottie/flow-end-begin-${logoColor}.json`}
-              style={{ width: "32px" }}
+              style={{ width: "34px" }}
             />
           )
         ) : (
@@ -35,8 +35,8 @@ export const Logo = ({ logoColor }: ILogo) => {
         )}
       </div>
       <div className="flex flex-row text-sm sm:flex-col sm:text-xs leading-4 tracking-wide">
-        <span>Smart</span>
-        <strong>Business</strong>
+        <span className="text-sd1 lg:text-md1">Smart</span>
+        <strong className="text-sd1 lg:text-md1">Business</strong>
       </div>
     </div>
   );
