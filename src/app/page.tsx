@@ -63,7 +63,7 @@ const Home = () => {
       <main className="flex flex-col items-center justify-center pt-64 lg:pt-0">
         <article className="relative max-w-screen-sm lg:flex lg:justify-between lg:max-w-none lg:w-full px-32 lg:px-116">
           <div className="lg:w-full">
-            <header className="flex flex-col items-center gap-16 lg:items-start lg:w-480 lg:gap-20 lg:mt-84 xl:w-688 xl:h-224">
+            <header className="flex flex-col items-center gap-16 lg:items-start lg:w-480 lg:gap-22 lg:mt-102 xl:w-688 xl:h-224">
               <div className="flex items-center gap-3">
                 <Image
                   src="icons/world.svg"
@@ -82,10 +82,10 @@ const Home = () => {
                 </span>
               </h1>
             </header>
-            <p className="text-center text-neutral400 mt-16 mb-40 lg:text-left lg:w-440 xl:text-md1 xl:w-560">
+            <p className="text-center text-neutral400 mt-16 mb-40 lg:text-left lg:mt-22 lg:mb-44 lg:w-440 xl:text-md1 xl:w-560">
               {texts.BELLOW_SUBTITLE}
             </p>
-            <div className="flex flex-col gap-2 lg:flex-row lg:w-220">
+            <div className="flex flex-col gap-2 lg:flex-row lg:w-220 lg:mb-300 xl:mb-0">
               <Button.Root variant={{ type: "contained" }}>
                 <span className="font-semibold">
                   {texts.BUSINESS_REGISTER_BUTTON}
@@ -101,20 +101,28 @@ const Home = () => {
                 <span>{texts.CONTACT_US_BUTTON}</span>
               </Button.Root>
             </div>
+            {pageWidth > 1440 && (
+              <Image
+                src="icons/arrow-down.svg"
+                alt="arrow down"
+                width={16}
+                height={28}
+                className="mt-70 mb-130"
+              />
+            )}
           </div>
-          <figure className="flex justify-center  ">
-            <Image
-              src="images/man.svg"
-              alt="some happy guy"
-              width={pageWidth < 985 ? 420 : pageWidth < 1440 ? 650 : 1400}
-              height={pageWidth < 985 ? 420 : pageWidth < 1440 ? 650 : 1400}
-              priority
-            />
-          </figure>
+          <Image
+            src="images/man.svg"
+            alt="some happy guy"
+            width={pageWidth < 985 ? 420 : 660}
+            height={pageWidth < 985 ? 420 : 660}
+            className="lg:absolute lg:right-40 lg:bottom-0 xl:absolute xl:right-90 xl:bottom-0 -z-10"
+            priority
+          />
           <AnnualProfit pageWidth={pageWidth} />
           <IconChat pageWidth={pageWidth} />
         </article>
-        <section className="relative w-full bg-primaryDefault overflow-hidden px-24 py-72 flex flex-col items-center text-center lg:gap-142 text-white lg:flex-row lg:px-116 lg:text-start">
+        <section className="relative w-full bg-primaryDefault overflow-hidden px-24 py-74 flex flex-col items-center text-center xl:gap-142 text-white xl:flex-row xl:px-116 xl:text-start">
           <Image
             src="assets/pipe-xl.svg"
             alt="pipe xl"
@@ -126,10 +134,10 @@ const Home = () => {
             }
             className="absolute top-0 left-0"
           />
-          <div className="flex flex-col items-center gap-4 lg:items-start">
-            <div className="flex flex-col items-center gap-2 lg:items-start lg:gap-4">
+          <div className="flex flex-col items-center gap-4 xl:items-start">
+            <div className="flex flex-col items-center gap-2 xl:items-start xl:gap-4 xl:pt-2">
               <Image src="icons/quote.svg" alt="quote" width={22} height={18} />
-              <p className="text-nm text-center max-w-md lg:text-start lg:max-w-none lg:w-440 lg:text-md1">
+              <p className="text-nm text-center max-w-md xl:text-start xl:max-w-none xl:w-440 xl:text-md1">
                 {texts.FEEDBACK_QUOTE}
               </p>
             </div>
@@ -149,13 +157,13 @@ const Home = () => {
               </div>
             </figure>
           </div>
-          <div className="flex flex-col items-center mt-56 lg:items-start lg:mt-0">
+          <div className="flex flex-col items-center mt-56 xl:items-start xl:mt-0">
             <div className="flex flex-col gap-56 lg:flex-row">
               <Metrics number="120" legend={texts.PROJECTS_CARRIED_OUT} />
               <Metrics number="12" legend={texts.BRAZILIAN_OFFICES} />
               <Metrics number="1bi" legend={`${texts.INVOICING} 2021`} />
             </div>
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center xl:items-start">
               <Image
                 src="assets/pipe.svg"
                 alt="retangle"

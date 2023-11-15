@@ -5,7 +5,7 @@ export function AnnualProfit({ pageWidth }: { pageWidth: number }) {
   const texts = TextsProvider.get();
 
   return (
-    <div className="py-4 px-4 bg-white w-110 h-100 flex items-center content-center shadow-sd absolute right-0 bottom-62 sd:right-8 sd:bottom-110 sm:right-100 sm:bottom-110 lg:right-64 lg:bottom-0 lg:w-200 lg:h-180 lg:translate-y-190 lg:px-6 lg:py-6 xl:bottom-344 xl:right-150">
+    <div className="py-4 px-4 bg-white w-110 h-100 flex items-center content-center shadow-sd absolute right-6 bottom-66 sd:right-6 sd:bottom-66 sm:right-120 sm:bottom-110 lg:right-62 lg:bottom-360 lg:w-200 lg:h-180 lg:translate-y-210 lg:px-6 lg:py-6 xl:bottom-360 xl:right-110">
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-start">
           <div className="font-semibold">
