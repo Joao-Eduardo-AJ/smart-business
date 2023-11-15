@@ -4,7 +4,7 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     screens: {
-      sd: "380px",
+      sd: "385px",
       sm: "560px",
       md: "765px",
       lg: "985px",
@@ -210,7 +210,11 @@ const config: Config = {
       sm2: "0.43rem",
       sd1: "0.875rem",
       sd2: "0.8125rem",
+      nm: "1rem",
+      md: "1.125rem",
       md1: "1.25rem",
+      lg1: "2.5rem",
+      lg2: "3.5rem",
       xl1: "4.5rem",
       "3.5xl": "2rem",
       "6xl": "3rem",
