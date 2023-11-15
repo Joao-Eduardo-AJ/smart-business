@@ -15,7 +15,12 @@ export const Topbar = ({ onClose }: ITopbar) => {
           {texts.MAKE_PART}
         </span>
       </p>
-      <XIcon width={9.5} height={9.5} onClose={onClose} />
+      <XIcon
+        width={9.5}
+        height={9.5}
+        onClose={onClose}
+        className="hidden md:absolute md:right-116 md:block cursor-pointer"
+      />
     </div>
   );
 };
