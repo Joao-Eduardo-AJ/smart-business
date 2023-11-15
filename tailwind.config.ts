@@ -9,6 +9,7 @@ const config: Config = {
       md: "765px",
       lg: "985px",
       xl: "1440px",
+      exl: "1785px",
     },
     colors: {
       primaryLight: "#2E7AFF",

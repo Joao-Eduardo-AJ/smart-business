@@ -15,6 +15,7 @@ import { CheckedTopic } from "@/components/checked-topic";
 import { PlayButton } from "@/components/play-button";
 import { WomanPhone } from "@/components/woman-phone";
 import { NextPageIcon } from "@/components/next-page-icon";
+import { Clients } from "@/components/clients-section";
 
 const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
@@ -225,7 +226,7 @@ const Home = () => {
             className="lg:absolute lg: bottom-120 lg:left-282 xl:left-320"
           />
         </article>
-        <section></section>
+        <Clients pageWidth={pageWidth} />
       </main>
     </RootLayout>
   );
