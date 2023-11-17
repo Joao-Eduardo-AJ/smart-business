@@ -5,7 +5,6 @@ interface IHowItemList {
   item: string;
   subItem: string;
   isLastItem?: boolean;
-  pageWidth: number;
 }
 
 export const HowItemList = ({
@@ -13,15 +12,15 @@ export const HowItemList = ({
   item,
   subItem,
   isLastItem,
-  pageWidth,
 }: IHowItemList) => (
   <li className="flex items-center gap-16">
     {isLastItem ? (
       <Image
         src="icons/rounded-star.svg"
         alt="last item"
-        width={pageWidth < 1440 ? 46 : 64}
-        height={pageWidth < 1440 ? 46 : 64}
+        width={64}
+        height={64}
+        className="w-46 h-46 xl:w-64 xl:h-64"
       />
     ) : (
       <span className="border bg-white border-neutral002 rounded-full h-46 w-46 text-primaryDefault flex items-center justify-center xl:h-64 xl:w-64 xl:text-md1">

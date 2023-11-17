@@ -1,12 +1,13 @@
 import Image from "next/image";
 
-export const IconChat = ({ pageWidth }: { pageWidth: number }) => (
-  <div className="rounded-full drop-shadow-md absolute right-158 bottom-166 sd:right-166 sd:bottom-174 sm:right-284 sm:bottom-250 lg:right-344 lg:bottom-400 xl:right-400 xl:bottom-400">
+export const IconChat = () => (
+  <div className="rounded-full drop-shadow-md absolute right-158 bottom-214 sd:right-166 sd:bottom-220 sm:right-284 sm:bottom-230 lg:right-328 lg:bottom-352 xl:bottom-410 xl:right-420">
     <Image
       src="icons/chat.svg"
       alt="chat icon"
-      width={pageWidth < 985 ? 54 : 90}
-      height={pageWidth < 985 ? 54 : 90}
+      width={90}
+      height={90}
+      className="w-54 h-54 lg:w-90 lg:h-90"
     />
   </div>
 );

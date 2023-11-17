@@ -12,7 +12,7 @@ export const NextPageIcon = ({ className }: XIconProps) => {
       alt="arrow down"
       width={16}
       height={28}
-      className={className?.toString()}
+      className={`hidden xl:block ${className?.toString()}`}
     />
   );
 };

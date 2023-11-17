@@ -2,7 +2,7 @@
 
 import RootLayout from "./layout";
 import { Topbar } from "@/components/top-bar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Logo } from "@/components/logo";
 import * as Button from "@/components/button";
 import { TextsProvider } from "@/translation";
@@ -21,35 +21,22 @@ import { TitleArticle } from "@/components/article-title";
 import { HeaderArticle } from "@/components/article-header";
 import { HowItemList } from "@/components/how-item-list";
 import { Article } from "@/components/article";
+import { UserSnack } from "@/components/user-snack";
+import { howWeMeth } from "@/mock";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Slides } from "@/components/slides";
 
 const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
-  const [pageWidth, setPageWidth] = useState(0);
   const texts = TextsProvider.get();
-  const howWeTech: { item: string; subItem: string }[] = [
-    { item: texts.FIRST_STEP, subItem: texts.ABOUT_FIRST_STEP },
-    { item: texts.SECOND_STEP, subItem: texts.ABOUT_SECOND_STEP },
-    { item: texts.THIRD_STEP, subItem: texts.ABOUT_THIRD_STEP },
-    { item: texts.FOURTH_STEP, subItem: texts.ABOUT_FOURTH_STEP },
-    { item: texts.LAST_STEP, subItem: texts.ABOUT_LAST_STEP },
-  ];
-
-  useEffect(() => {
-    function handleResize() {
-      setPageWidth(window.innerWidth);
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <RootLayout>
       {topbarVisible && <Topbar onClose={() => setTopbarVisible(false)} />}
       <header className="flex justify-between items-center px-8 w-full bg-white h-76 sm:bg-neutral001 sm:h-42 sm:mt-40 relative lg:px-116">
-        {pageWidth > 560 ? <Logo logoColor="blue" /> : <Logo />}
+        <Logo logoColor="blue" />
         <div>
           <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-270 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:bg-neutral002">
             <Image
@@ -60,21 +47,18 @@ const Home = () => {
             />
             <span className="font-semibold">{texts.ACCESS_BUTTON}</span>
           </button>
-          {pageWidth > 560 && (
-            <Button.Root variant={{ type: "outlined" }}>
-              <span className="font-semibold absolute left-16">
-                {texts.REGISTER_BUTTON}
-              </span>
-
-              <Button.Icon
-                src="icons/arrow-next-white.svg"
-                alt="register"
-                width={20}
-                height={20}
-                className="-scale-100 absolute left-226"
-              />
-            </Button.Root>
-          )}
+          <Button.Root variant={{ type: "outlined" }}>
+            <span className="font-semibold absolute left-16">
+              {texts.REGISTER_BUTTON}
+            </span>
+            <Button.Icon
+              src="icons/arrow-next-white.svg"
+              alt="register"
+              width={20}
+              height={20}
+              className="-scale-100 absolute left-226"
+            />
+          </Button.Root>
         </div>
       </header>
       <main className="flex flex-col items-center justify-center pt-64 lg:pt-0">
@@ -118,18 +102,18 @@ const Home = () => {
                 <span>{texts.CONTACT_US_BUTTON}</span>
               </Button.Root>
             </div>
-            {pageWidth > 1440 && <NextPageIcon className="mt-70 mb-130" />}
+            <NextPageIcon className="mt-70 mb-130" />
           </div>
           <Image
             src="images/man.svg"
             alt="some happy guy"
-            width={pageWidth < 985 ? 420 : 660}
-            height={pageWidth < 985 ? 420 : 660}
-            className="lg:absolute lg:right-40 lg:bottom-0 xl:absolute xl:right-90 xl:bottom-0 -z-10"
+            width={736}
+            height={736}
+            className="w-420 h-420 lg:w-660 lg:h-660 xl:w-736 xl:h-736 lg:absolute lg:right-40 lg:bottom-0 xl:absolute xl:right-90 xl:bottom-0 -z-10"
             priority
           />
-          <AnnualProfit pageWidth={pageWidth} />
-          <IconChat pageWidth={pageWidth} />
+          <AnnualProfit />
+          <IconChat />
         </article>
         <section className="relative w-full bg-primaryDefault overflow-hidden px-24 py-74 flex flex-col items-center text-center xl:gap-142 text-white xl:flex-row xl:px-116 xl:text-start">
           <Image
@@ -146,21 +130,15 @@ const Home = () => {
                 {texts.FEEDBACK_QUOTE}
               </p>
             </div>
-            <figure>
-              <div className="flex items-center gap-20">
-                <Image
-                  src="images/savannah.svg"
-                  alt="savannah"
-                  width={54}
-                  height={54}
-                  className="bg-auxiliaryYellow rounded-full"
-                />
-                <div>
-                  <p className="text-md font-semibold">Savannah Nguyen</p>
-                  <p className="text-sd1">UX Designer | Google</p>
-                </div>
-              </div>
-            </figure>
+            <UserSnack
+              name="Savannah Nguyen"
+              occupation="UX Designer | Google"
+              nameTextSize="text-md"
+              className="bg-auxiliaryYellow"
+              avatarAlt="savannah"
+              avatarSize={54}
+              avatarSrc="images/user3.svg"
+            />
           </div>
           <div className="flex flex-col items-center mt-56 xl:items-start xl:mt-0">
             <div className="flex flex-col gap-56 lg:flex-row">
@@ -198,18 +176,18 @@ const Home = () => {
               <CheckedTopic text={texts.SECOND_TOPIC} />
               <CheckedTopic text={texts.THIRD_TOPIC} />
             </div>
-            {pageWidth > 1440 && <NextPageIcon className="mt-254" />}
+            <NextPageIcon className="mt-254" />
           </div>
           <div className="flex flex-col gap-48 items-center lg:w-560 xl:w-696">
             <figure className="relative">
               <Image
                 src="images/video-group.svg"
                 alt="video"
-                width={pageWidth < 985 ? 312 : 1000}
-                height={pageWidth < 985 ? 176 : 1000}
-                className="shadow-video lg:shadow-videoXl"
+                width={696}
+                height={376}
+                className="shadow-video w-328 h-auto lg:w-560 xl:w-696 lg:shadow-videoXl"
               />
-              <PlayButton pageWidth={pageWidth} />
+              <PlayButton />
             </figure>
             <div className="flex flex-col gap-28 items-center lg:text-start w-328 lg:w-full lg:text-md">
               <p>
@@ -229,52 +207,68 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <WomanPhone
-            pageWidth={pageWidth}
-            className="lg:absolute lg: bottom-120 lg:left-282 xl:left-320"
-          />
+          <WomanPhone className="lg:absolute lg: bottom-120 lg:left-282 xl:left-320" />
         </Article>
-        <Clients pageWidth={pageWidth} />
+        <Clients />
         <Article>
           <HeaderArticle>
             <TitleArticle>{texts.UNDERSTAND_HOW}</TitleArticle>
-            <SubTitleArticle>{texts.HOW_WE_APPLY_OUR_TECH}</SubTitleArticle>
+            <SubTitleArticle>{texts.HOW_WE_APPLY_OUR_METH}</SubTitleArticle>
           </HeaderArticle>
           <ul className="flex flex-col gap-46 relative xl:my-60 xl:mr-34">
-            {howWeTech.map((el, index) => (
+            {howWeMeth.map((el, index) => (
               <HowItemList
                 key={index}
                 item={el.item}
                 subItem={el.subItem}
-                isLastItem={howWeTech.length === index + 1}
+                isLastItem={howWeMeth.length === index + 1}
                 index={index + 1}
-                pageWidth={pageWidth}
               />
             ))}
             <Image
               src="assets/dotted-pipe.svg"
               alt="dotted pipe"
-              width={pageWidth < 1440 ? 2 : 2.5}
+              width={2.5}
               height={322}
-              className="absolute top-0 left-21 -z-10 xl:left-30"
+              className="absolute w-0.2 xl:w-0.25 top-0 left-21 -z-10 xl:left-30"
             />
           </ul>
           <figure className="flex items-end gap-4 overflow-hidden lg:absolute lg:bottom-120 lg:left-112 xl:left-10">
             <Image
               src="images/sales.svg"
               alt="sales"
-              width={pageWidth < 985 ? 97 : pageWidth < 1440 ? 127 : 176}
-              height={pageWidth < 985 ? 107 : pageWidth < 1440 ? 137 : 195}
-              className="shadow-sales"
+              width={176}
+              height={196}
+              className="shadow-sales w-98 h-108 lg:w-128 lg:h-138 xl:w-176 xl:h-196"
             />
             <Image
               src="images/device.svg"
               alt="device"
-              width={pageWidth < 985 ? 272 : pageWidth < 1440 ? 240 : 354}
-              height={pageWidth < 985 ? 254 : pageWidth < 1440 ? 220 : 446}
-              className="bg-neutral001"
+              width={354}
+              height={344}
+              className="bg-neutral001 w-278 h-254 lg:w-240 lg:h-220 xl:w-352 xl:h-344"
             />
           </figure>
+        </Article>
+        <Article variant={{ type: "neutral" }}>
+          <HeaderArticle>
+            <TitleArticle>{texts.OUR_BLOG}</TitleArticle>
+            <SubTitleArticle>{texts.WORDL_TECH_NEWS}</SubTitleArticle>
+          </HeaderArticle>
+          <Slides />
+          <div className="-mt-4 lg:-mt-0 lg: lg:absolute lg:top-152 lg:right-112 xl:top-220 xl:right-480">
+            <Button.Root>
+              <span className="text-neutral700 underline underline-offset-2 font-semibold text-md">
+                {texts.KNOW_OUR_BLOG}
+              </span>
+              <Button.Icon
+                src="icons/arrow-next.svg"
+                alt="know our blog"
+                width={16}
+                height={12}
+              />
+            </Button.Root>
+          </div>
         </Article>
       </main>
     </RootLayout>

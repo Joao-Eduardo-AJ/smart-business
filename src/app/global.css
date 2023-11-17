@@ -2,6 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-p, h1, h2, h3, span, strong {
-    cursor: default
+:root {
+  --swiper-navigation-size: 20px !important;
+}
+
+p,
+h1,
+h2,
+h3,
+strong {
+  cursor: default;
+}
+
+#carrousel::-webkit-scrollbar {
+  display: none;
+}
+
+.swiper {
+  min-width: 17.5rem;
+  max-width: 100%;
+  height: 39rem;
+}
+
+.swiper-slide {
+  max-width: 17rem;
+  max-height: 33rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: #1d63ff !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f2f5fc !important;
+  border: 1px solid #1d63ff;
+}
+
+@media only screen and (max-width: 765px) {
+  .swiper {
+    max-width: 104%;
+  }
+}
+
+@media only screen and (min-width: 1279px) {
+  .swiper {
+    position: absolute !important;
+    min-height: 50rem;
+    max-width: calc(100% - 14rem);
+    padding-bottom: 6rem !important;
+    z-index: -10 !important;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: end;
+  }
+
+  .swiper-button-next {
+    top: 7.875rem !important;
+    right: 0 !important;
+  }
+
+  .swiper-button-prev {
+    top: 7.875rem !important;
+    left: calc(100% - 43px) !important;
+  }
 }

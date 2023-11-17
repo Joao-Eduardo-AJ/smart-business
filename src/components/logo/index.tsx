@@ -21,6 +21,7 @@ export const Logo = ({ logoColor }: ILogo) => {
               keepLastFrame
               src={`lottie/flow-begin-end-${logoColor}.json`}
               style={{ width: "34px" }}
+              className="hidden sm:block"
             />
           ) : (
             <Player
@@ -28,10 +29,17 @@ export const Logo = ({ logoColor }: ILogo) => {
               keepLastFrame
               src={`lottie/flow-end-begin-${logoColor}.json`}
               style={{ width: "34px" }}
+              className="hidden sm:block"
             />
           )
         ) : (
-          <Image src="icons/logo.svg" width={22} height={19} alt="logo" />
+          <Image
+            src="icons/logo.svg"
+            width={22}
+            height={19}
+            alt="logo"
+            className="block sm:hidden"
+          />
         )}
       </div>
       <div className="flex flex-row text-sm sm:flex-col sm:text-xs leading-4 tracking-wide">
