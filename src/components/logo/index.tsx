@@ -43,7 +43,7 @@ export const Logo = ({ logoColor }: ILogo) => {
         )}
       </div>
       <div className="flex flex-row text-sm sm:flex-col sm:text-xs leading-4 tracking-wide">
-        <span className="text-sd1 lg:text-md1">Smart</span>
+        <span className="text-sd1 lg:text-md1 cursor-default">Smart</span>
         <strong className="text-sd1 lg:text-md1">Business</strong>
       </div>
     </div>
