@@ -72,7 +72,7 @@ export const Texts = {
   FIRST_DOUBT: "What resources can I still access on the new Pages?",
   SECOND_DOUBT: "How do I open my new Page?",
   THIRD_DOUBT: "Is there any content that will not migrate with my Page?",
-  FORTH_DOUBT: "How will people find my new Page?",
+  FOURTH_DOUBT: "How will people find my new Page?",
   LAST_DOUBT: "What is the Feed? How do I set it up?",
   DOUBTS: "Doubts?",
   SEND_MESSAGE_OUR_TEAM: "Send a message to our team",
@@ -80,6 +80,8 @@ export const Texts = {
   REGISTER_TRANSFORM: "Register to transform your company",
   CALL_IN_ZAP: "Call on WhatsApp",
   TALK_WITH_OUR_COMMERCIAL_SECTOR: "Talk to our commercial",
+  ACCORDION_CONTENT:
+    "Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna feugiat ultrices semper quisque at. Viverra lectus ut a gravida aliquet cras est lectus ullamcorper. Elementum diam iaculis neque arcu, aliquet consectetur.",
 
   // last section
   NEWSLETTER: "Newsletter",

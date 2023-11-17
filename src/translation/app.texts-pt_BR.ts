@@ -72,7 +72,7 @@ export const Texts = {
   FIRST_DOUBT: "Quais recursos ainda posso acessar nas novas Páginas?",
   SECOND_DOUBT: "Como faço para abrir a minha nova Página?",
   THIRD_DOUBT: "Há algum conteúdo que não migrará com a minha Página?",
-  FORTH_DOUBT: "Como as pessoas encontrarão a minha nova Página?",
+  FOURTH_DOUBT: "Como as pessoas encontrarão a minha nova Página?",
   LAST_DOUBT: "O que é o Feed? Como faço para configurá-lo?",
   DOUBTS: "Dúvidas?",
   SEND_MESSAGE_OUR_TEAM: "Envie uma mensagem para nosso time",
@@ -80,6 +80,8 @@ export const Texts = {
   REGISTER_TRANSFORM: "Registre-se para transformar sua empresa",
   CALL_IN_ZAP: "Chama no zap",
   TALK_WITH_OUR_COMMERCIAL_SECTOR: "Fale com o nosso comercial",
+  ACCORDION_CONTENT:
+    "Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna feugiat ultrices semper quisque at. Viverra lectus ut a gravida aliquet cras est lectus ullamcorper. Elementum diam iaculis neque arcu, aliquet consectetur.",
 
   // last section
   NEWSLETTER: "Newsletter",
