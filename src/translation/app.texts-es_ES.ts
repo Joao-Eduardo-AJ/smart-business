@@ -37,7 +37,7 @@ export const Texts = {
 
   // know-how section
   UNDERSTAND_HOW: "Entiende cómo funciona",
-  HOW_WE_APPLY_OUR_TECH: "Ve cómo aplicamos nuestra metodología",
+  HOW_WE_APPLY_OUR_METH: "Ve cómo aplicamos nuestra metodología",
   SALES_MADE: "ventas realizadas",
 
   FIRST_STEP: "Regístrate en nuestro sitio",

@@ -37,7 +37,7 @@ export const Texts = {
 
   // know how section
   UNDERSTAND_HOW: "Understand how it works",
-  HOW_WE_APPLY_OUR_TECH: "See how we apply our methodology",
+  HOW_WE_APPLY_OUR_METH: "See how we apply our methodology",
   SALES_MADE: "sales made",
 
   FIRST_STEP: "Sign up on our website",

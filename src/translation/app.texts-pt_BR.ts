@@ -37,7 +37,7 @@ export const Texts = {
 
   // know how section
   UNDERSTAND_HOW: "Entenda como funciona",
-  HOW_WE_APPLY_OUR_TECH: "Veja como aplicamos nossa metodologia",
+  HOW_WE_APPLY_OUR_METH: "Veja como aplicamos nossa metodologia",
   SALES_MADE: "vendas realizadas",
 
   FIRST_STEP: "Cadastre-se em nosso site",
@@ -57,7 +57,7 @@ export const Texts = {
 
   // blog section
   OUR_BLOG: "Nosso blog",
-  WORDL_TECH_NEWS: "Notícias do mundo da metodologia",
+  WORDL_TECH_NEWS: "Notícias do mundo da tecnologia",
   KNOW_OUR_BLOG: "Conheça nosso blog",
   BUSINESS: "Business",
   INNOVATION: "Inovação",
