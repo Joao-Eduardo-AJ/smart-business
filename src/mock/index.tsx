@@ -93,3 +93,37 @@ export const peopleAndNewsInfo: {
     newsParagraph: "Scelerisque morbi mattis in vel diam mi. Et nibh porttitor",
   },
 ];
+
+export const frequentlyDoubts: { title: string; content: string }[] = [
+  { title: texts.FIRST_DOUBT, content: texts.ACCORDION_CONTENT },
+  { title: texts.SECOND_DOUBT, content: texts.ACCORDION_CONTENT },
+  { title: texts.THIRD_DOUBT, content: texts.ACCORDION_CONTENT },
+  { title: texts.FOURTH_DOUBT, content: texts.ACCORDION_CONTENT },
+  { title: texts.LAST_DOUBT, content: texts.ACCORDION_CONTENT },
+];
+
+export const doubtCard: {
+  iconSrc: string;
+  alt: string;
+  title: string;
+  content: string;
+}[] = [
+  {
+    iconSrc: "icons/doubt.svg",
+    alt: "doubts?",
+    title: texts.DOUBTS,
+    content: texts.SEND_MESSAGE_OUR_TEAM,
+  },
+  {
+    iconSrc: "icons/logo.svg",
+    alt: "make part",
+    title: texts.BE_PART,
+    content: texts.REGISTER_TRANSFORM,
+  },
+  {
+    iconSrc: "icons/whatsapp.svg",
+    alt: "call us in whatsapp",
+    title: texts.CALL_IN_ZAP,
+    content: texts.TALK_WITH_OUR_COMMERCIAL_SECTOR,
+  },
+];

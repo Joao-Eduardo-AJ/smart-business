@@ -22,11 +22,13 @@ import { HeaderArticle } from "@/components/article-header";
 import { HowItemList } from "@/components/how-item-list";
 import { Article } from "@/components/article";
 import { UserSnack } from "@/components/user-snack";
-import { howWeMeth } from "@/mock";
+import { doubtCard, frequentlyDoubts, howWeMeth } from "@/mock";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Slides } from "@/components/slides";
+import { DoubtAccordion } from "@/components/doubt-accordion";
+import { DoubtCard } from "@/components/doubt-card";
 
 const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
@@ -88,18 +90,20 @@ const Home = () => {
             </p>
             <div className="flex flex-col gap-2 lg:flex-row lg:w-220 lg:mb-300 xl:mb-0">
               <Button.Root variant={{ type: "contained" }}>
-                <span className="font-semibold">
+                <span className="font-semibold text-md">
                   {texts.BUSINESS_REGISTER_BUTTON}
                 </span>
               </Button.Root>
-              <Button.Root variant={{ type: "text" }}>
+              <Button.Root>
                 <Button.Icon
                   src="icons/phone.svg"
                   alt="talk to us"
                   width={13}
                   height={20}
                 />
-                <span>{texts.CONTACT_US_BUTTON}</span>
+                <span className="text-neutral500 text-nm">
+                  {texts.CONTACT_US_BUTTON}
+                </span>
               </Button.Root>
             </div>
             <NextPageIcon className="mt-70 mb-130" />
@@ -268,6 +272,58 @@ const Home = () => {
                 height={12}
               />
             </Button.Root>
+          </div>
+        </Article>
+        <Article>
+          <div className="flex flex-col items-center gap-40 w-full lg:flex-row lg:items-start lg:justify-between">
+            <div className="flex flex-col gap-40 xl:mb-420">
+              <header className="flex flex-col gap-4 items-center lg:items-start lg:w-412">
+                <TitleArticle>{texts.CLEAR_DOUBTS}</TitleArticle>
+                <SubTitleArticle>{texts.FREQUENTLY_QUESTIONS}</SubTitleArticle>
+                <p className="text-nm text-neutral500 lg:text-md1 lg:text-left">
+                  {texts.DOUBTS_SUBTITLE}
+                </p>
+              </header>
+              <div className="w-full lg:w-236">
+                <Button.Root variant={{ type: "contained" }}>
+                  <span className="font-semibold text-md">
+                    {texts.BUSINESS_REGISTER_BUTTON}
+                  </span>
+                </Button.Root>
+                <Button.Root>
+                  <Button.Icon
+                    src="icons/phone.svg"
+                    alt="talk to us"
+                    width={13}
+                    height={20}
+                  />
+                  <span className="text-neutral500 text-nm">
+                    {texts.CONTACT_US_BUTTON}
+                  </span>
+                </Button.Root>
+              </div>
+            </div>
+            <div className="-mt-32 lg:-mt-0 lg:mb-276 xl:mb-0">
+              {frequentlyDoubts.map((el, index) => (
+                <DoubtAccordion
+                  key={index}
+                  index={`0${index + 1}`}
+                  title={el.title}
+                  content={el.content}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-24 lg:flex-row lg:absolute lg:bottom-120 doubtCards">
+            {doubtCard.map((el, index) => (
+              <DoubtCard
+                key={index}
+                iconSrc={el.iconSrc}
+                alt={el.alt}
+                title={el.title}
+                content={el.content}
+              />
+            ))}
           </div>
         </Article>
       </main>
