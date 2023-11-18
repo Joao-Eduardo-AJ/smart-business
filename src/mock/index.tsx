@@ -1,4 +1,5 @@
 import { TextsProvider } from "@/translation";
+import { HTMLAttributeAnchorTarget } from "react";
 
 const texts = TextsProvider.get();
 
@@ -107,23 +108,30 @@ export const doubtCard: {
   alt: string;
   title: string;
   content: string;
+  href: string;
+  target?: HTMLAttributeAnchorTarget;
 }[] = [
   {
     iconSrc: "icons/doubt.svg",
     alt: "doubts?",
     title: texts.DOUBTS,
     content: texts.SEND_MESSAGE_OUR_TEAM,
+    href: "https://w.app/k6YEDn",
+    target: "_blank",
   },
   {
     iconSrc: "icons/logo.svg",
     alt: "make part",
     title: texts.BE_PART,
     content: texts.REGISTER_TRANSFORM,
+    href: "/register",
   },
   {
     iconSrc: "icons/whatsapp.svg",
     alt: "call us in whatsapp",
     title: texts.CALL_IN_ZAP,
     content: texts.TALK_WITH_OUR_COMMERCIAL_SECTOR,
+    href: "https://w.app/k6YEDn",
+    target: "_blank",
   },
 ];

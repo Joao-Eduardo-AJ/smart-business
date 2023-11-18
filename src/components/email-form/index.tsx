@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { TextsProvider } from "@/translation";
 import { FormErrors } from "@/forms/FormErrors";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface IEmailForm {
   email: string;
@@ -15,6 +16,7 @@ interface IEmailForm {
 export function EmailForm() {
   const formRef = useRef<FormHandles>(null);
   const texts = TextsProvider.get();
+  const router = useRouter();
 
   const formValidationSchema: yup.ObjectSchema<IEmailForm> = yup
     .object()
@@ -29,6 +31,7 @@ export function EmailForm() {
         if (validatedData instanceof Error) {
           console.log(Error);
         } else {
+          router.push("/register");
           console.log(validatedData);
         }
       })
@@ -48,7 +51,7 @@ export function EmailForm() {
     <Form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="flex flex-col gap-16 w-full lg:w-490 lg:flex-row lg:bg-white lg:gap-0 items-center lg:pr-3"
+      className="flex flex-col gap-16 w-full lg:h-64 lg:w-490 lg:flex-row lg:bg-white lg:gap-0 items-center lg:pr-3"
     >
       <Input
         name="email"

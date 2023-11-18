@@ -9,7 +9,7 @@ const input = tv({
     type: {
       text: "placeholder-neutral200",
       outlined: "placeholder-neutral050",
-      news: "placeholder-neutral200 pl-16",
+      news: "placeholder-neutral200 pl-16 lg:py-20",
     },
   },
   defaultVariants: {
@@ -43,8 +43,8 @@ export const Input = ({ name, variant, children, ...props }: InputProps) => {
   }, [registerField, fieldName]);
 
   return (
-    <div className="flex flex-col w-full gap-1">
-      <div className="flex  bg-white pl-20">
+    <div className="flex flex-col w-full gap-1 h-full">
+      <div className="flex bg-white pl-20">
         {children}
         <input
           {...props}
@@ -55,7 +55,7 @@ export const Input = ({ name, variant, children, ...props }: InputProps) => {
         />
       </div>
       <span
-        className={`text-auxiliaryRed text-sd2 text-left  ${
+        className={`text-auxiliaryRed text-sd2 text-left ${
           error ? "visible" : "hidden"
         }`}
       >

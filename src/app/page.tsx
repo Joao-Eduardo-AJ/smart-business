@@ -31,6 +31,7 @@ import { DoubtAccordion } from "@/components/doubt-accordion";
 import { DoubtCard } from "@/components/doubt-card";
 import { EmailForm } from "@/components/email-form";
 import "@/forms/translationYup";
+import Link from "next/link";
 
 const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
@@ -50,27 +51,31 @@ const Home = () => {
           />
         </Logo>
         <div>
-          <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-270 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:bg-neutral002">
-            <Image
-              src="icons/person.svg"
-              alt="register"
-              width={20}
-              height={20}
-            />
-            <span className="font-semibold">{texts.ACCESS_BUTTON}</span>
-          </button>
-          <Button.Root variant={{ type: "outlined" }}>
-            <span className="font-semibold absolute left-16">
-              {texts.REGISTER_BUTTON}
-            </span>
-            <Button.Icon
-              src="icons/arrow-next-white.svg"
-              alt="register"
-              width={20}
-              height={20}
-              className="-scale-100 absolute left-226"
-            />
-          </Button.Root>
+          <Link href="/register">
+            <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-270 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:bg-neutral002">
+              <Image
+                src="icons/person.svg"
+                alt="register"
+                width={20}
+                height={20}
+              />
+              <span className="font-semibold">{texts.ACCESS_BUTTON}</span>
+            </button>
+          </Link>
+          <Link href="/register">
+            <Button.Root variant={{ type: "outlined" }}>
+              <span className="font-semibold absolute left-16">
+                {texts.REGISTER_BUTTON}
+              </span>
+              <Button.Icon
+                src="icons/arrow-next-white.svg"
+                alt="register"
+                width={20}
+                height={20}
+                className="-scale-100 absolute left-226"
+              />
+            </Button.Root>
+          </Link>
         </div>
       </header>
       <main className="flex flex-col items-center justify-center pt-64 lg:pt-0 -z-100 overflow-x-hidden">
@@ -98,23 +103,27 @@ const Home = () => {
             <p className="text-center text-neutral400 mt-16 mb-40 lg:text-left lg:mt-22 lg:mb-44 lg:w-440 xl:text-md1 xl:w-560">
               {texts.BELLOW_SUBTITLE}
             </p>
-            <div className="flex flex-col gap-2 lg:flex-row lg:w-220 lg:mb-300 xl:mb-0">
-              <Button.Root variant={{ type: "contained" }}>
-                <span className="font-semibold text-md">
-                  {texts.BUSINESS_REGISTER_BUTTON}
-                </span>
-              </Button.Root>
-              <Button.Root>
-                <Button.Icon
-                  src="icons/phone.svg"
-                  alt="talk to us"
-                  width={13}
-                  height={20}
-                />
-                <span className="text-neutral500 text-nm">
-                  {texts.CONTACT_US_BUTTON}
-                </span>
-              </Button.Root>
+            <div className="flex flex-col lg:flex-row lg:w-240 lg:gap-2 lg:mb-300 xl:mb-0">
+              <Link href="/register">
+                <Button.Root variant={{ type: "contained" }}>
+                  <span className="font-semibold text-md">
+                    {texts.BUSINESS_REGISTER_BUTTON}
+                  </span>
+                </Button.Root>
+              </Link>
+              <Link href="https://w.app/k6YEDn" target="_blank">
+                <Button.Root>
+                  <Button.Icon
+                    src="icons/phone.svg"
+                    alt="talk to us"
+                    width={13}
+                    height={20}
+                  />
+                  <span className="text-neutral500 text-nm">
+                    {texts.CONTACT_US_BUTTON}
+                  </span>
+                </Button.Root>
+              </Link>
             </div>
             <NextPageIcon className="mt-70 mb-130" />
           </div>
@@ -295,22 +304,26 @@ const Home = () => {
                 </p>
               </header>
               <div className="w-full lg:w-236">
-                <Button.Root variant={{ type: "contained" }}>
-                  <span className="font-semibold text-md">
-                    {texts.BUSINESS_REGISTER_BUTTON}
-                  </span>
-                </Button.Root>
-                <Button.Root>
-                  <Button.Icon
-                    src="icons/phone.svg"
-                    alt="talk to us"
-                    width={13}
-                    height={20}
-                  />
-                  <span className="text-neutral500 text-nm">
-                    {texts.CONTACT_US_BUTTON}
-                  </span>
-                </Button.Root>
+                <Link href="/register">
+                  <Button.Root variant={{ type: "contained" }}>
+                    <span className="font-semibold text-md">
+                      {texts.BUSINESS_REGISTER_BUTTON}
+                    </span>
+                  </Button.Root>
+                </Link>
+                <Link href="https://w.app/k6YEDn" target="_blank">
+                  <Button.Root>
+                    <Button.Icon
+                      src="icons/phone.svg"
+                      alt="talk to us"
+                      width={13}
+                      height={20}
+                    />
+                    <span className="text-neutral500 text-nm">
+                      {texts.CONTACT_US_BUTTON}
+                    </span>
+                  </Button.Root>
+                </Link>
               </div>
             </div>
             <div className="-mt-32 lg:-mt-0 lg:mb-276 xl:mb-0">
@@ -332,6 +345,8 @@ const Home = () => {
                 alt={el.alt}
                 title={el.title}
                 content={el.content}
+                href={el.href}
+                target={el.target}
               />
             ))}
           </div>
@@ -380,33 +395,50 @@ const Home = () => {
             {texts.TM}
           </p>
         </div>
-        <div className="flex gap-16">
-          <Image src="icons/twitter.svg" width={32} height={32} alt="twitter" />
-          <Image
-            src="icons/linkedin.svg"
-            width={32}
-            height={32}
-            alt="twitter"
-          />
-          <Image
-            src="icons/instagram.svg"
-            width={32}
-            height={32}
-            alt="twitter"
-          />
-          <Image
-            src="icons/facebook.svg"
-            width={32}
-            height={32}
-            alt="twitter"
-          />
+        <div>
+          <Link
+            href="https://www.linkedin.com/in/joaoeduardoaj/"
+            target="_blank"
+            className="flex gap-16"
+          >
+            <Image
+              src="icons/twitter.svg"
+              width={32}
+              height={32}
+              alt="twitter"
+              className="transition duration-300 hover:scale-150"
+            />
+            <Image
+              src="icons/linkedin.svg"
+              width={32}
+              height={32}
+              alt="twitter"
+              className="transition duration-300 hover:scale-150"
+            />
+            <Image
+              src="icons/instagram.svg"
+              width={32}
+              height={32}
+              alt="twitter"
+              className="transition duration-300 hover:scale-150"
+            />
+            <Image
+              src="icons/facebook.svg"
+              width={32}
+              height={32}
+              alt="twitter"
+              className="transition duration-300 hover:scale-150"
+            />
+          </Link>
         </div>
-        <p className="text-neutral050 text-sd1 lg:text-neutral400 lg:text-center">
-          {`${texts.DB} `}
-          <span className="underline underline-offset-2">
-            {texts.INSANY_DESIGN}
+        <div className="flex items-center text-neutral050 text-sd1 lg:text-neutral400 lg:text-center gap-1">
+          <p>{`${texts.DB}`}</p>
+          <span className="underline underline-offset-2 transition-all duration-300 cursor-pointer hover:text-primaryDefault">
+            <Link href="https://insany.design/" target="_blank">
+              {texts.INSANY_DESIGN}
+            </Link>
           </span>
-        </p>
+        </div>
       </footer>
     </RootLayout>
   );
