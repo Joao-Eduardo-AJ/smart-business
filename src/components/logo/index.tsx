@@ -1,12 +1,26 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import Image from "next/image";
-import { useState } from "react";
+import { HTMLAttributes, ReactNode, useState } from "react";
+import { VariantProps, tv } from "tailwind-variants";
 
-interface ILogo {
+const logo = tv({
+  base: "flex text-sm sm:flex-col sm:text-xs leading-4 tracking-wide",
+  variants: {
+    type: {
+      header: "flex-row",
+      footer: "flex-col",
+    },
+  },
+  defaultVariants: {
+    type: "header",
+  },
+});
+interface ILogo extends HTMLAttributes<HTMLElement> {
+  variant?: VariantProps<typeof logo>;
   logoColor?: "blue" | "white";
+  children: ReactNode;
 }
 
-export const Logo = ({ logoColor }: ILogo) => {
+export const Logo = ({ logoColor, variant, children }: ILogo) => {
   const [flowDirection, setFlowDirection] = useState(false);
   return (
     <div className="flex flex-row justify-center items-center w-140h-32 gap-2">
@@ -14,8 +28,8 @@ export const Logo = ({ logoColor }: ILogo) => {
         onMouseOver={() => setFlowDirection(true)}
         onMouseOut={() => setFlowDirection(false)}
       >
-        {logoColor ? (
-          flowDirection ? (
+        {logoColor &&
+          (flowDirection ? (
             <Player
               autoplay
               keepLastFrame
@@ -31,18 +45,10 @@ export const Logo = ({ logoColor }: ILogo) => {
               style={{ width: "34px" }}
               className="hidden sm:block"
             />
-          )
-        ) : (
-          <Image
-            src="icons/logo.svg"
-            width={22}
-            height={19}
-            alt="logo"
-            className="block sm:hidden"
-          />
-        )}
+          ))}
+        {children}
       </div>
-      <div className="flex flex-row text-sm sm:flex-col sm:text-xs leading-4 tracking-wide">
+      <div className={logo(variant)}>
         <span className="text-sd1 lg:text-md1 cursor-default">Smart</span>
         <strong className="text-sd1 lg:text-md1">Business</strong>
       </div>

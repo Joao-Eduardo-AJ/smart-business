@@ -40,7 +40,15 @@ const Home = () => {
     <RootLayout>
       {topbarVisible && <Topbar onClose={() => setTopbarVisible(false)} />}
       <header className="flex justify-between items-center px-8 w-full bg-white h-76 sm:bg-neutral001 sm:h-42 sm:mt-40 relative lg:px-116">
-        <Logo logoColor="blue" />
+        <Logo logoColor="blue">
+          <Image
+            src="icons/logo.svg"
+            width={22}
+            height={19}
+            alt="logo"
+            className="block sm:hidden"
+          />
+        </Logo>
         <div>
           <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-270 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:bg-neutral002">
             <Image
@@ -357,6 +365,49 @@ const Home = () => {
           />
         </Article>
       </main>
+      <footer className="flex flex-col gap-32 py-64 items-center lg:flex-row lg:justify-between lg:px-112">
+        <div className="flex flex-col gap-24 lg:flex-row lg:justify-between xl:gap-80">
+          <Logo logoColor="blue" variant={{ type: "footer" }}>
+            <Image
+              src="icons/logo.svg"
+              width={22}
+              height={19}
+              alt="logo"
+              className="block sm:hidden"
+            />
+          </Logo>
+          <p className="text-neutral050 w-178 text-sd1 text-center lg:w-full lg:text-neutral400 lg:flex lg:items-center">
+            {texts.TM}
+          </p>
+        </div>
+        <div className="flex gap-16">
+          <Image src="icons/twitter.svg" width={32} height={32} alt="twitter" />
+          <Image
+            src="icons/linkedin.svg"
+            width={32}
+            height={32}
+            alt="twitter"
+          />
+          <Image
+            src="icons/instagram.svg"
+            width={32}
+            height={32}
+            alt="twitter"
+          />
+          <Image
+            src="icons/facebook.svg"
+            width={32}
+            height={32}
+            alt="twitter"
+          />
+        </div>
+        <p className="text-neutral050 text-sd1 lg:text-neutral400 lg:text-center">
+          {`${texts.DB} `}
+          <span className="underline underline-offset-2">
+            {texts.INSANY_DESIGN}
+          </span>
+        </p>
+      </footer>
     </RootLayout>
   );
 };

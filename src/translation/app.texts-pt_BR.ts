@@ -93,7 +93,8 @@ export const Texts = {
 
   // footer
   TM: "© 2022 SmartBusiness. Todos os direitos reservados",
-  DB: "Desenvolvido por Insany Design",
+  DB: "Design desenvolvido por",
+  INSANY_DESIGN: "Insany Design",
 
   // register page
   ASIDE_TITLE: "O verdadeiro conceito de Smart Company",
