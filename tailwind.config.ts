@@ -19,6 +19,7 @@ const config: Config = {
 
       auxiliaryGreen: "#35D9A8",
       auxiliaryYellow: "#FFD76F",
+      auxiliaryRed: "#FF5C60",
 
       white: "#FFFFFF",
 
@@ -222,7 +223,9 @@ const config: Config = {
         "700": "43.75rem",
         "736": "46rem",
         "818": "51.125rem",
+        "1030": "64.375rem",
         "1216": "76rem",
+        "1440": "90rem",
       },
     },
     fontSize: {

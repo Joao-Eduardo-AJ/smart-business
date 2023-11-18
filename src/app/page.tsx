@@ -29,6 +29,8 @@ import "swiper/css/pagination";
 import { Slides } from "@/components/slides";
 import { DoubtAccordion } from "@/components/doubt-accordion";
 import { DoubtCard } from "@/components/doubt-card";
+import { EmailForm } from "@/components/email-form";
+import "@/forms/translationYup";
 
 const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
@@ -63,7 +65,7 @@ const Home = () => {
           </Button.Root>
         </div>
       </header>
-      <main className="flex flex-col items-center justify-center pt-64 lg:pt-0">
+      <main className="flex flex-col items-center justify-center pt-64 lg:pt-0 -z-100 overflow-x-hidden">
         <article className="relative max-w-screen-sm lg:flex lg:justify-between lg:max-w-none lg:w-full px-32 lg:px-116">
           <div className="lg:w-full">
             <header className="flex flex-col items-center gap-16 lg:items-start lg:w-480 lg:gap-22 lg:mt-102 xl:w-688 xl:h-224">
@@ -325,6 +327,34 @@ const Home = () => {
               />
             ))}
           </div>
+        </Article>
+        <Article variant={{ type: "dark" }}>
+          <HeaderArticle variant={{ type: "dark" }}>
+            <TitleArticle>{texts.NEWSLETTER}</TitleArticle>
+            <div className="flex flex-col items-center gap-2">
+              <h3 className="text-md2/7 w-260 lg:w-full lg:text-3.5xl/9 xl:text-6xl/tight xl:text-lg1">
+                {texts.STAY_UTD}
+              </h3>
+              <p className="text-sd1 lead lg:text-nm xl:w-500">
+                {texts.JOIN_US}
+              </p>
+            </div>
+          </HeaderArticle>
+          <EmailForm />
+          <Image
+            src="images/cube-left.svg"
+            alt=""
+            width={1029}
+            height={571}
+            className="absolute top-0 left-0 -z-20 w-1030 xl:w-1440 xl:-top-380"
+          />
+          <Image
+            src="images/cube-right.svg"
+            alt=""
+            width={1029}
+            height={571}
+            className="absolute top-52 right-0 -z-20 w-1030 xl:w-1440 xl:-top-200"
+          />
         </Article>
       </main>
     </RootLayout>
