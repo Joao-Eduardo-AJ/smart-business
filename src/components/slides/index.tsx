@@ -25,10 +25,13 @@ export function Slides() {
       pagination
       spaceBetween={37}
       breakpoints={{
+        300: { slidesPerView: 1, slidesPerGroup: 1 },
         640: { slidesPerView: 2, slidesPerGroup: 2 },
         1140: { slidesPerView: 3, slidesPerGroup: 3 },
         1440: { slidesPerView: 4, slidesPerGroup: 2 },
+        1770: { slidesPerView: 5, slidesPerGroup: 2 },
       }}
+      centerInsufficientSlides
     >
       {peopleAndNewsInfo.map((el, index) => (
         <SwiperSlide key={index}>

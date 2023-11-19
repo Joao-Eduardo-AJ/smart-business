@@ -20,7 +20,7 @@ const button = tv({
   },
 });
 
-export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: VariantProps<typeof button>;
 }
 

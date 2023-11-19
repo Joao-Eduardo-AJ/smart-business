@@ -1,34 +1,37 @@
 "use client";
 
 import RootLayout from "./layout";
-import { Topbar } from "@/components/top-bar";
+import {
+  Button,
+  Topbar,
+  AnnualProfit,
+  ButtonGroup,
+  CheckedTopic,
+  Clients,
+  DoubtAccordion,
+  DoubtCard,
+  HeaderSection,
+  HowItemList,
+  Logo,
+  Metrics,
+  NextPageIcon,
+  PlayButton,
+  Section,
+  SubTitleSection,
+  TitleSection,
+  UserSnack,
+  WomanPhone,
+  Writer,
+  IconChat,
+  Slides,
+} from "@/components";
 import { useState } from "react";
-import { Logo } from "@/components/logo";
-import * as Button from "@/components/button";
 import { TextsProvider } from "@/translation";
 import Image from "next/image";
-import { Writer } from "@/components/writer";
-import { AnnualProfit } from "@/components/annual-profit";
-import { IconChat } from "@/components/icon-chat";
-import { Metrics } from "@/components/metrics";
-import { CheckedTopic } from "@/components/checked-topic";
-import { PlayButton } from "@/components/play-button";
-import { WomanPhone } from "@/components/woman-phone";
-import { NextPageIcon } from "@/components/next-page-icon";
-import { Clients } from "@/components/clients-section";
-import { SubTitleArticle } from "@/components/article-subtitle";
-import { TitleArticle } from "@/components/article-title";
-import { HeaderArticle } from "@/components/article-header";
-import { HowItemList } from "@/components/how-item-list";
-import { Article } from "@/components/article";
-import { UserSnack } from "@/components/user-snack";
 import { doubtCard, frequentlyDoubts, howWeMeth } from "@/mock";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Slides } from "@/components/slides";
-import { DoubtAccordion } from "@/components/doubt-accordion";
-import { DoubtCard } from "@/components/doubt-card";
 import { EmailForm } from "@/forms/EmailForm";
 import "@/forms/translationYup";
 import Link from "next/link";
@@ -37,9 +40,11 @@ const Home = () => {
   const [topbarVisible, setTopbarVisible] = useState(true);
   const texts = TextsProvider.get();
 
+  const handleCloseTopBar = () => setTopbarVisible(false);
+
   return (
     <RootLayout>
-      {topbarVisible && <Topbar onClose={() => setTopbarVisible(false)} />}
+      {topbarVisible && <Topbar onClose={handleCloseTopBar} />}
       <header className="flex justify-between items-center px-8 w-full bg-white h-76 sm:bg-neutral001 sm:h-42 sm:mt-40 relative lg:px-116">
         <Logo logoColor="blue">
           <Image
@@ -81,7 +86,7 @@ const Home = () => {
         </div>
       </header>
       <main className="flex flex-col items-center justify-center pt-64 lg:pt-0 -z-100 overflow-x-hidden">
-        <article className="relative max-w-screen-sm lg:flex lg:justify-between lg:max-w-none lg:w-full px-32 lg:px-116">
+        <section className="relative max-w-screen-sm lg:flex lg:justify-between lg:max-w-none lg:w-full px-32 lg:px-116">
           <div className="lg:w-full">
             <header className="flex flex-col items-center gap-16 lg:items-start lg:w-480 lg:gap-22 lg:mt-102 xl:w-688 xl:h-224">
               <div className="flex items-center gap-3">
@@ -105,28 +110,7 @@ const Home = () => {
             <p className="text-center text-neutral400 mt-16 mb-40 lg:text-left lg:mt-22 lg:mb-44 lg:w-440 xl:text-md1 xl:w-560">
               {texts.BELLOW_SUBTITLE}
             </p>
-            <div className="flex flex-col lg:flex-row lg:w-240 lg:gap-2 lg:mb-300 xl:mb-0">
-              <Link href="/register">
-                <Button.Root variant={{ type: "contained" }}>
-                  <span className="font-semibold text-md">
-                    {texts.BUSINESS_REGISTER_BUTTON}
-                  </span>
-                </Button.Root>
-              </Link>
-              <Link href="https://w.app/k6YEDn" target="_blank">
-                <Button.Root>
-                  <Button.Icon
-                    src="icons/phone.svg"
-                    alt="talk to us"
-                    width={13}
-                    height={20}
-                  />
-                  <span className="text-neutral500 text-nm">
-                    {texts.CONTACT_US_BUTTON}
-                  </span>
-                </Button.Root>
-              </Link>
-            </div>
+            <ButtonGroup />
             <NextPageIcon className="mt-70 mb-130" />
           </div>
           <Image
@@ -139,7 +123,7 @@ const Home = () => {
           />
           <AnnualProfit />
           <IconChat />
-        </article>
+        </section>
         <section className="relative w-full bg-primaryDefault overflow-hidden px-24 py-74 flex flex-col items-center text-center xl:gap-142 text-white xl:flex-row xl:px-116 xl:text-start">
           <Image
             src="assets/pipe-xl.svg"
@@ -190,12 +174,12 @@ const Home = () => {
             className="absolute -bottom-80 -right-40 lg:bottom-0 lg:right-0"
           />
         </section>
-        <Article>
+        <Section>
           <div>
-            <HeaderArticle>
-              <TitleArticle>{texts.ABOUT_COMPANY}</TitleArticle>
-              <SubTitleArticle>{texts.CREATING_INNOATING}</SubTitleArticle>
-            </HeaderArticle>
+            <HeaderSection>
+              <TitleSection>{texts.ABOUT_COMPANY}</TitleSection>
+              <SubTitleSection>{texts.CREATING_INNOATING}</SubTitleSection>
+            </HeaderSection>
             <div className="flex flex-col gap-24 mt-40 lg:w-max">
               <CheckedTopic text={texts.FIRST_TOPIC} />
               <CheckedTopic text={texts.SECOND_TOPIC} />
@@ -233,13 +217,13 @@ const Home = () => {
             </div>
           </div>
           <WomanPhone className="lg:absolute lg: bottom-120 lg:left-282 xl:left-320" />
-        </Article>
+        </Section>
         <Clients />
-        <Article>
-          <HeaderArticle>
-            <TitleArticle>{texts.UNDERSTAND_HOW}</TitleArticle>
-            <SubTitleArticle>{texts.HOW_WE_APPLY_OUR_METH}</SubTitleArticle>
-          </HeaderArticle>
+        <Section>
+          <HeaderSection>
+            <TitleSection>{texts.UNDERSTAND_HOW}</TitleSection>
+            <SubTitleSection>{texts.HOW_WE_APPLY_OUR_METH}</SubTitleSection>
+          </HeaderSection>
           <ul className="flex flex-col gap-46 relative xl:my-60 xl:mr-34">
             {howWeMeth.map((el, index) => (
               <HowItemList
@@ -274,12 +258,12 @@ const Home = () => {
               className="bg-neutral001 w-278 h-254 lg:w-240 lg:h-220 xl:w-352 xl:h-344"
             />
           </figure>
-        </Article>
-        <Article variant={{ type: "neutral" }}>
-          <HeaderArticle>
-            <TitleArticle>{texts.OUR_BLOG}</TitleArticle>
-            <SubTitleArticle>{texts.WORDL_TECH_NEWS}</SubTitleArticle>
-          </HeaderArticle>
+        </Section>
+        <Section variant={{ type: "neutral" }}>
+          <HeaderSection>
+            <TitleSection>{texts.OUR_BLOG}</TitleSection>
+            <SubTitleSection>{texts.WORDL_TECH_NEWS}</SubTitleSection>
+          </HeaderSection>
           <Slides />
           <div className="-mt-4 lg:-mt-0 lg: lg:absolute lg:top-152 lg:right-112 xl:top-220 xl:right-480">
             <Button.Root>
@@ -294,39 +278,18 @@ const Home = () => {
               />
             </Button.Root>
           </div>
-        </Article>
-        <Article>
+        </Section>
+        <Section>
           <div className="flex flex-col items-center gap-40 w-full lg:flex-row lg:items-start lg:justify-between">
             <div className="flex flex-col gap-40 xl:mb-420">
-              <header className="flex flex-col gap-4 items-center lg:items-start lg:w-412">
-                <TitleArticle>{texts.CLEAR_DOUBTS}</TitleArticle>
-                <SubTitleArticle>{texts.FREQUENTLY_QUESTIONS}</SubTitleArticle>
-                <p className="text-nm text-neutral500 lg:text-md1 lg:text-left">
+              <HeaderSection variant={{ type: "light" }}>
+                <TitleSection>{texts.CLEAR_DOUBTS}</TitleSection>
+                <SubTitleSection>{texts.FREQUENTLY_QUESTIONS}</SubTitleSection>
+                <p className="text-nm text-neutral500 lg:text-md1 lg:text-left sm:w-400">
                   {texts.DOUBTS_SUBTITLE}
                 </p>
-              </header>
-              <div className="w-full lg:w-236">
-                <Link href="/register">
-                  <Button.Root variant={{ type: "contained" }}>
-                    <span className="font-semibold text-md">
-                      {texts.BUSINESS_REGISTER_BUTTON}
-                    </span>
-                  </Button.Root>
-                </Link>
-                <Link href="https://w.app/k6YEDn" target="_blank">
-                  <Button.Root>
-                    <Button.Icon
-                      src="icons/phone.svg"
-                      alt="talk to us"
-                      width={13}
-                      height={20}
-                    />
-                    <span className="text-neutral500 text-nm">
-                      {texts.CONTACT_US_BUTTON}
-                    </span>
-                  </Button.Root>
-                </Link>
-              </div>
+              </HeaderSection>
+              <ButtonGroup variant={{ type: "doubt" }} />
             </div>
             <div className="-mt-32 lg:-mt-0 lg:mb-276 xl:mb-0">
               {frequentlyDoubts.map((el, index) => (
@@ -352,10 +315,10 @@ const Home = () => {
               />
             ))}
           </div>
-        </Article>
-        <Article variant={{ type: "dark" }}>
-          <HeaderArticle variant={{ type: "dark" }}>
-            <TitleArticle>{texts.NEWSLETTER}</TitleArticle>
+        </Section>
+        <Section variant={{ type: "dark" }}>
+          <HeaderSection variant={{ type: "dark" }}>
+            <TitleSection>{texts.NEWSLETTER}</TitleSection>
             <div className="flex flex-col items-center gap-2">
               <h3 className="text-md2/7 w-260 lg:w-full lg:text-3.5xl/9 xl:text-6xl/tight xl:text-lg1">
                 {texts.STAY_UTD}
@@ -364,7 +327,7 @@ const Home = () => {
                 {texts.JOIN_US}
               </p>
             </div>
-          </HeaderArticle>
+          </HeaderSection>
           <EmailForm />
           <Image
             src="images/cube-left.svg"
@@ -380,7 +343,7 @@ const Home = () => {
             height={571}
             className="absolute top-52 right-0 -z-20 w-1030 xl:w-1440 xl:-top-200"
           />
-        </Article>
+        </Section>
       </main>
       <footer className="flex flex-col gap-32 py-64 items-center lg:flex-row lg:justify-between lg:px-112">
         <div className="flex flex-col gap-24 lg:flex-row lg:justify-between xl:gap-80">

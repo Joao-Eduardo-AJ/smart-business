@@ -1,7 +1,7 @@
 import { HTMLAttributes, ReactNode } from "react";
 import { VariantProps, tv } from "tailwind-variants";
 
-const headerArticle = tv({
+const headerSection = tv({
   base: "flex flex-col gap-4 items-center",
   variants: {
     type: {
@@ -14,13 +14,13 @@ const headerArticle = tv({
   },
 });
 
-interface IArticle extends HTMLAttributes<HTMLElement> {
-  variant?: VariantProps<typeof headerArticle>;
+interface ISection extends HTMLAttributes<HTMLElement> {
+  variant?: VariantProps<typeof headerSection>;
   children: ReactNode;
 }
 
-export const HeaderArticle = ({ variant, children, ...props }: IArticle) => (
-  <header {...props} className={headerArticle(variant)}>
+export const HeaderSection = ({ variant, children, ...props }: ISection) => (
+  <header {...props} className={headerSection(variant)}>
     {children}
   </header>
 );

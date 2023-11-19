@@ -2,23 +2,20 @@
 
 import Link from "next/link";
 import RootLayout from "../layout";
-import * as Button from "@/components/button";
 import { TextsProvider } from "@/translation";
 import { MainForm } from "@/forms/MainForm";
-import { Logo } from "@/components/logo";
 import Image from "next/image";
-import { AnnualProfit } from "@/components/annual-profit";
 import "@/forms/translationYup";
 import { LoginGoogle } from "@/forms/LoginGoogle";
 import { useState } from "react";
-import { RecoverPasswordModal } from "@/components/modal-recover-password";
+import { AnnualProfit, Button, Logo, RecoverPasswordModal } from "@/components";
 const Register = () => {
   const [recoverPasswordModalVisible, setRecoverPasswordModalVisible] =
     useState(false);
   const texts = TextsProvider.get();
   return (
     <RootLayout pageRegister>
-      <main className="bg-white h-screen text-neutral050 text-sd1 lg:flex overflow-hidden">
+      <main className="bg-white h-screen text-neutral050 text-sd1 lg:flex">
         <aside className="hidden bg-primaryDefault lg:flex flex-col gap-62 pt-88 lg:px-32 xl:px-88 w-528 relative">
           <Logo logoColor="white" />
           <p className="text-white text-md2 xl:text-3.5xl w-328">

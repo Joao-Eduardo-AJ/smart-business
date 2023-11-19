@@ -21,17 +21,18 @@ export function RecoverPasswordModal({ open, onClose }: IRecoverPasswordModal) {
       <div
         className={`${
           open ? "bottom-1/2 translate-y-1/2" : "-bottom-500"
-        } absolute right-1/2 translate-x-1/2 transition-all duration-500 ease-in-out mx-auto flex items-center sd:items-start bg-white rounded-md md:w-742 lg:flex lg:h-460 z-50`}
+        } absolute right-1/2 translate-x-1/2 transition-all duration-500 ease-in-out mx-auto flex items-center sd:items-start md:w-742 lg:flex lg:h-460 z-50`}
       >
-        <aside className="hidden lg:flex h-full w-344">
+        <aside className="hidden lg:flex w-340 bg-primaryDefault rounded-l-md">
           <Image
             src="assets/forgotten-group.svg"
             alt="rcover password aside"
-            width={222}
+            width={224}
             height={460}
+            className="rounded-l-md"
           />
         </aside>
-        <div className="px-24 py-24 flex flex-col gap-16 md:px-32 md:pt-40 md:pb-50 lg:px-50 lg:pt-80 lg:pb-100 relative md:w-full ">
+        <div className="px-24 py-24 flex flex-col gap-16 md:px-32 md:pt-40 md:pb-50 lg:px-50 lg:pt-80 lg:pb-100 relative md:w-full bg-white rounded-r-md">
           <Image
             src="icons/x.svg"
             alt="close modal"

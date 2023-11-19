@@ -25,8 +25,9 @@ export const Logo = ({ logoColor, variant, children }: ILogo) => {
   return (
     <div className="flex flex-row justify-center items-center w-140 h-32 gap-2">
       <div
-        onMouseOver={() => setFlowDirection(true)}
+        onMouseEnter={() => setFlowDirection(true)}
         onMouseOut={() => setFlowDirection(false)}
+        className="h-full"
       >
         {logoColor &&
           (flowDirection ? (

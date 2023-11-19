@@ -1,7 +1,7 @@
 import { HTMLAttributes, ReactNode } from "react";
 import { VariantProps, tv } from "tailwind-variants";
 
-const article = tv({
+const section = tv({
   base: "py-64 px-24 w-full text-center flex flex-col items-center z-0 gap-40 lg:py-120 lg:px-112 lg:justify-between overflow-hidden",
   variants: {
     type: {
@@ -16,13 +16,13 @@ const article = tv({
   },
 });
 
-interface IArticle extends HTMLAttributes<HTMLElement> {
-  variant?: VariantProps<typeof article>;
+interface ISection extends HTMLAttributes<HTMLElement> {
+  variant?: VariantProps<typeof section>;
   children: ReactNode;
 }
 
-export const Article = ({ variant, children, ...props }: IArticle) => (
-  <article {...props} className={article(variant)}>
+export const Section = ({ variant, children, ...props }: ISection) => (
+  <section {...props} className={section(variant)}>
     {children}
-  </article>
+  </section>
 );
