@@ -9,8 +9,8 @@ const input = tv({
     type: {
       text: "placeholder-neutral200 py-20",
       outlined:
-        "placeholder-neutral050 py-16 px-16  border-2 border-neutral002 focus:border-primaryDefault/50",
-      news: "placeholder-neutral200 pl-16 lg:py-20",
+        "placeholder-neutral050 py-16 px-16 border-2 border-neutral002 focus:border-primaryDefault/50",
+      news: "placeholder-neutral200 pl-16 py-20",
     },
   },
   defaultVariants: {
