@@ -117,5 +117,6 @@ export const Texts = {
   FORGOTTEN_PASSWORD: "¿Olvidaste la contraseña?",
   RECOVERY_INSTRUCTION:
     "Ingresa tu correo electrónico y enviaremos instrucciones para restablecer tu contraseña",
-  RECOVER_PASSWORD_BUTTON: "Recuperar Contraseña",
+  RECOVER_PASSWORD_PLACEHOLDER: "jhon@example.com",
+  RECOVER_PASSWORD_BUTTON: "Recuperar contraseña",
 };

@@ -7,10 +7,21 @@ const mainFontFamily = Archivo({
   subsets: ["latin"],
 });
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+interface IRootLayout {
+  children: ReactNode;
+  pageRegister?: boolean;
+}
+
+export default function RootLayout({ children, pageRegister }: IRootLayout) {
   return (
     <html lang="pt-br" className={mainFontFamily.className}>
-      <body className="bg-neutral001">{children}</body>
+      <body
+        className={`bg-neutral001 relative ${
+          pageRegister && "overflow-hidden"
+        }`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

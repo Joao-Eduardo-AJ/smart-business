@@ -8,7 +8,11 @@ import * as yup from "yup";
 import { FormErrors } from "./FormErrors";
 import { FormHandles } from "@unform/core";
 
-export function MainForm() {
+export function MainForm({
+  onClickForgottenPass,
+}: {
+  onClickForgottenPass: () => void;
+}) {
   const texts = TextsProvider.get();
   const formRef = useRef<FormHandles>(null);
 
@@ -80,7 +84,10 @@ export function MainForm() {
           name="remember"
           label={texts.REMEMBER_CREDENTIALS_CHECKBOX_LABEL}
         />
-        <span className="text-primaryLight cursor-pointer">
+        <span
+          className="text-primaryLight cursor-pointer"
+          onClick={() => onClickForgottenPass()}
+        >
           {texts.FORGOTTEN_PASSWORD}
         </span>
       </div>

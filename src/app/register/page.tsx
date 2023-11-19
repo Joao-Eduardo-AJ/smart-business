@@ -10,12 +10,15 @@ import Image from "next/image";
 import { AnnualProfit } from "@/components/annual-profit";
 import "@/forms/translationYup";
 import { LoginGoogle } from "@/forms/LoginGoogle";
-
+import { useState } from "react";
+import { RecoverPasswordModal } from "@/components/modal-recover-password";
 const Register = () => {
+  const [recoverPasswordModalVisible, setRecoverPasswordModalVisible] =
+    useState(false);
   const texts = TextsProvider.get();
   return (
-    <RootLayout>
-      <main className="bg-white h-screen text-neutral050 text-sd1 overflow-hidden lg:flex">
+    <RootLayout pageRegister>
+      <main className="bg-white h-screen text-neutral050 text-sd1 lg:flex overflow-hidden">
         <aside className="hidden bg-primaryDefault lg:flex flex-col gap-62 pt-88 lg:px-32 xl:px-88 w-528 relative">
           <Logo logoColor="white" />
           <p className="text-white text-md2 xl:text-3.5xl w-328">
@@ -56,7 +59,9 @@ const Register = () => {
               </Button.Root>
             </Link>
           </nav>
-          <MainForm />
+          <MainForm
+            onClickForgottenPass={() => setRecoverPasswordModalVisible(true)}
+          />
           <div className="mt-32">
             <LoginGoogle />
           </div>
@@ -68,6 +73,10 @@ const Register = () => {
           </div>
         </div>
       </main>
+      <RecoverPasswordModal
+        open={recoverPasswordModalVisible}
+        onClose={() => setRecoverPasswordModalVisible(false)}
+      />
     </RootLayout>
   );
 };

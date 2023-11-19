@@ -7,9 +7,9 @@ const input = tv({
   base: "bg-white w-full text-nm text-start text-neutral800 cursor-text z-100 outline-0",
   variants: {
     type: {
-      text: "placeholder-neutral200 py-20",
+      text: "placeholder-neutral050 text-sd1 py-20",
       outlined:
-        "placeholder-neutral050 py-16 px-16 border-2 border-neutral002 focus:border-primaryDefault/50",
+        "placeholder-neutral050 placeholder:text-sd1 py-16 px-16 border-2 border-neutral002 focus:border-primaryDefault/50",
       news: "placeholder-neutral200 pl-16 py-20",
     },
   },
@@ -46,7 +46,9 @@ export const Input = ({ name, variant, children, ...props }: InputProps) => {
   return (
     <div className="flex flex-col w-full gap-1 h-full">
       <div
-        className={`flex bg-white ${variant?.type !== "outlined" && "pl-20"}`}
+        className={`flex bg-white ${variant?.type !== "outlined" && "pl-20"} ${
+          variant?.type === "text" && "shadow-input"
+        }`}
       >
         {children}
         <input
