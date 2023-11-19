@@ -29,7 +29,7 @@ import "swiper/css/pagination";
 import { Slides } from "@/components/slides";
 import { DoubtAccordion } from "@/components/doubt-accordion";
 import { DoubtCard } from "@/components/doubt-card";
-import { EmailForm } from "@/components/email-form";
+import { EmailForm } from "@/forms/EmailForm";
 import "@/forms/translationYup";
 import Link from "next/link";
 
@@ -52,14 +52,16 @@ const Home = () => {
         </Logo>
         <div>
           <Link href="/register">
-            <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-270 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:bg-neutral002">
+            <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-270 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:scale-110">
               <Image
                 src="icons/person.svg"
                 alt="register"
                 width={20}
                 height={20}
               />
-              <span className="font-semibold">{texts.ACCESS_BUTTON}</span>
+              <span className="font-semibold text-sd1">
+                {texts.ACCESS_BUTTON}
+              </span>
             </button>
           </Link>
           <Link href="/register">

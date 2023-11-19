@@ -13,6 +13,7 @@ setLocale({
     max: ({ max }) => `${texts.STRING_MAX} ${max} ${texts.CHARACTERS}`,
     min: ({ min }) => `${texts.STRING_MIN} ${min} ${texts.CHARACTERS}`,
     length: ({ length }) => `${texts.STRING_MAX} ${length} ${texts.CHARACTERS}`,
+    matches: () => `${texts.MATCHES}`,
   },
   date: {
     max: ({ max }) => `${texts.DATE_MAX} ${max}`,

@@ -97,7 +97,8 @@ export const Texts = {
   INSANY_DESIGN: "Insany Design",
 
   // register page
-  ASIDE_TITLE: "O verdadeiro conceito de Smart Company",
+  ASIDE_TITLE: "O verdadeiro conceito de",
+  SMART_COMPANY: "Smart Company",
   BACK: "Voltar",
   LOGIN: "Login",
   EMAIL_INPUT_LABEL: "E-mail",
@@ -110,7 +111,7 @@ export const Texts = {
   LOGIN_WITH_GOOGLE: "Entrar com o google",
   DONT_HAVE_ACCOUNT: "Não tem uma conta?",
   HAVE_ACCOUNT: "Já tem uma conta?",
-  SUBSCRIBE: "Inscreva-se",
+  SUBSCRIBE: "Inscrever-se",
 
   // forgotten password modal
   FORGOTTEN_PASSWORD: "Esqueceu a senha?",

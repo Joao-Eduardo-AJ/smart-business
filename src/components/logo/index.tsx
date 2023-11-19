@@ -17,13 +17,13 @@ const logo = tv({
 interface ILogo extends HTMLAttributes<HTMLElement> {
   variant?: VariantProps<typeof logo>;
   logoColor?: "blue" | "white";
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const Logo = ({ logoColor, variant, children }: ILogo) => {
   const [flowDirection, setFlowDirection] = useState(false);
   return (
-    <div className="flex flex-row justify-center items-center w-140h-32 gap-2">
+    <div className="flex flex-row justify-center items-center w-140 h-32 gap-2">
       <div
         onMouseOver={() => setFlowDirection(true)}
         onMouseOut={() => setFlowDirection(false)}
@@ -48,7 +48,9 @@ export const Logo = ({ logoColor, variant, children }: ILogo) => {
           ))}
         {children}
       </div>
-      <div className={logo(variant)}>
+      <div
+        className={`${logo(variant)} ${logoColor === "white" && "text-white"}`}
+      >
         <span className="text-sd1 lg:text-md1 cursor-default">Smart</span>
         <strong className="text-sd1 lg:text-md1">Business</strong>
       </div>

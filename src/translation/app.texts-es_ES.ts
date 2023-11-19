@@ -97,7 +97,8 @@ export const Texts = {
   INSANY_DESIGN: "Insany Design",
 
   // register page
-  ASIDE_TITLE: "El verdadero concepto de Smart Company",
+  ASIDE_TITLE: "El verdadero concepto de",
+  MART_COMPANY: "Smart Company",
   BACK: "Volver",
   LOGIN: "Iniciar sesión",
   EMAIL_INPUT_LABEL: "Correo electrónico",
