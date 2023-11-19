@@ -51,7 +51,7 @@ export function EmailForm() {
     <Form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="flex flex-col gap-16 w-full lg:h-64 lg:w-490 lg:flex-row lg:bg-white lg:gap-0 items-center lg:pr-3"
+      className="flex flex-col gap-16 w-full lg:w-490 lg:flex-row lg:bg-white lg:gap-0 items-center lg:pr-3"
     >
       <Input
         name="email"
