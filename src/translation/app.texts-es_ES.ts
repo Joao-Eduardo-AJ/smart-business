@@ -98,7 +98,7 @@ export const Texts = {
 
   // register page
   ASIDE_TITLE: "El verdadero concepto de",
-  MART_COMPANY: "Smart Company",
+  SMART_COMPANY: "Smart Company",
   BACK: "Volver",
   LOGIN: "Iniciar sesión",
   EMAIL_INPUT_LABEL: "Correo electrónico",
