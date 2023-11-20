@@ -99,16 +99,16 @@ const Home = () => {
                   height={28}
                   loading="eager"
                 />
-                <p className="font-semibold text-neutral500">
+                <h1 className="font-semibold text-neutral500">
                   {texts.ABOVE_SUBTITLE}
-                </p>
+                </h1>
               </div>
-              <h1 className="text-3.5xl leading-10 text-center h-110 sd:h-80 text-neutral700 lg:text-left lg:text-6xl/tight lg:h-116 xl:text-xl1">
+              <p className="text-3.5xl leading-10 text-center h-110 sd:h-80 text-neutral700 lg:text-left lg:text-6xl/tight lg:h-116 xl:text-xl1">
                 {texts.MAIN_TITLE}
                 <span className="underline decoration-primaryDefault text-neutral700 lg:underline-offset-1">
                   <Writer />
                 </span>
-              </h1>
+              </p>
             </header>
             <p className="text-center text-neutral400 mt-16 mb-40 lg:text-left lg:mt-22 lg:mb-44 lg:w-440 xl:text-md1 xl:w-560">
               {texts.BELLOW_SUBTITLE}
