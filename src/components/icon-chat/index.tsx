@@ -8,7 +8,7 @@ export const IconChat = () => (
       width={90}
       height={90}
       className="w-54 h-54 lg:w-90 lg:h-90"
-      loading="lazy"
+      loading="eager"
     />
   </div>
 );

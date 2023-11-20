@@ -8,7 +8,7 @@ export const Clients = () => (
       width={120}
       height={39}
       className="w-104 h-34 lg:w-120 lg:h-38"
-      loading="lazy"
+      loading="eager"
     />
     <Image
       src="images/spotify.svg"
@@ -16,7 +16,7 @@ export const Clients = () => (
       width={144}
       height={45}
       className="w-128 h-40 lg:w-144 lg:h-44"
-      loading="lazy"
+      loading="eager"
     />
     <Image
       src="images/git-hub.svg"
@@ -24,7 +24,7 @@ export const Clients = () => (
       width={103}
       height={28}
       className="w-96 h-26 lg:w-104 lg:h-28"
-      loading="lazy"
+      loading="eager"
     />
     <Image
       src="images/microsoft.svg"
@@ -32,7 +32,7 @@ export const Clients = () => (
       width={184}
       height={39}
       className="w-126 h-28 lg:w-184 lg:h-38"
-      loading="lazy"
+      loading="eager"
     />
     <Image
       src="images/digg.svg"
@@ -40,7 +40,7 @@ export const Clients = () => (
       width={70}
       height={42}
       className="w-66 h-38 lg:w-70 lg:h-42"
-      loading="lazy"
+      loading="eager"
     />
     <Image
       src="images/host-gator.svg"
@@ -48,7 +48,7 @@ export const Clients = () => (
       width={168}
       height={26}
       className="w-124 h-18 lg:w-168 lg:h-26"
-      loading="lazy"
+      loading="eager"
     />
   </section>
 );

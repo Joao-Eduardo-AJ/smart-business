@@ -33,7 +33,7 @@ export function RecoverPasswordModal({ open, onClose }: IRecoverPasswordModal) {
             loading="lazy"
           />
         </aside>
-        <div className="px-24 py-24 flex flex-col gap-16 md:px-32 md:pt-40 md:pb-50 lg:px-50 lg:pt-80 lg:pb-100 relative md:w-full bg-white rounded-r-md">
+        <div className="px-24 py-24 h-full flex flex-col gap-16 md:px-32 md:pt-40 md:pb-50 lg:px-50 lg:pt-80 lg:pb-100 relative md:w-full bg-white rounded-md lg:rounded-l-none">
           <Image
             src="icons/x.svg"
             alt="close modal"

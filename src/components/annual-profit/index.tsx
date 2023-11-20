@@ -22,7 +22,7 @@ export function AnnualProfit() {
             width={20}
             height={24}
             className="w-3 h-4 lg:w-20 lg:h-24"
-            loading="lazy"
+            loading="eager"
           />
         </div>
         <Image
@@ -31,7 +31,7 @@ export function AnnualProfit() {
           width={200}
           height={200}
           className="w-100 h-40 lg:w-200 lg:h-80"
-          loading="lazy"
+          loading="eager"
         />
       </div>
     </div>

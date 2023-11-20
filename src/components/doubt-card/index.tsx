@@ -31,7 +31,7 @@ export const DoubtCard = ({
         width={42}
         height={42}
         className="mb-4"
-        loading="lazy"
+        loading="eager"
       />
       <h4 className="text-neutral700 text-nm">{title}</h4>
       <p className="text-neutral300 text-sd1 leading-5 w-198 lg:w-130 xl:w-full">

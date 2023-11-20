@@ -52,7 +52,7 @@ const Home = () => {
             width={22}
             height={19}
             alt="logo"
-            loading="lazy"
+            loading="eager"
             className="block sm:hidden"
           />
         </Logo>
@@ -64,7 +64,7 @@ const Home = () => {
                 alt="register"
                 width={20}
                 height={20}
-                loading="lazy"
+                loading="eager"
               />
               <span className="font-semibold text-sd1">
                 {texts.ACCESS_BUTTON}
@@ -97,7 +97,7 @@ const Home = () => {
                   alt="register"
                   width={28}
                   height={28}
-                  loading="lazy"
+                  loading="eager"
                 />
                 <p className="font-semibold text-neutral500">
                   {texts.ABOVE_SUBTITLE}
@@ -134,7 +134,7 @@ const Home = () => {
             width={112}
             height={56}
             className="absolute top-0 left-0"
-            loading="lazy"
+            loading="eager"
           />
           <div className="flex flex-col items-center gap-4 xl:items-start">
             <div className="flex flex-col items-center gap-2 xl:items-start xl:gap-4 xl:pt-2">
@@ -143,7 +143,7 @@ const Home = () => {
                 alt="quote"
                 width={22}
                 height={18}
-                loading="lazy"
+                loading="eager"
               />
               <p className="text-nm text-center max-w-md xl:text-start xl:max-w-none xl:w-440 xl:text-md1">
                 {texts.FEEDBACK_QUOTE}
@@ -172,7 +172,7 @@ const Home = () => {
                 width={38}
                 height={0}
                 className="my-32"
-                loading="lazy"
+                loading="eager"
               />
               <p className="text-nm leading-4">{texts.EXPANDING_TERRITORY}</p>
             </div>
@@ -183,7 +183,7 @@ const Home = () => {
             width={120}
             height={120}
             className="absolute -bottom-80 -right-40 lg:bottom-0 lg:right-0"
-            loading="lazy"
+            loading="eager"
           />
         </section>
         <Section>
@@ -207,7 +207,7 @@ const Home = () => {
                 width={696}
                 height={376}
                 className="shadow-video w-328 h-auto lg:w-560 xl:w-696 lg:shadow-videoXl"
-                loading="lazy"
+                loading="eager"
               />
               <PlayButton />
             </figure>
@@ -253,7 +253,7 @@ const Home = () => {
               width={2.5}
               height={322}
               className="absolute w-0.2 xl:w-0.25 top-0 left-21 -z-10 xl:left-30"
-              loading="lazy"
+              loading="eager"
             />
           </ul>
           <figure className="flex items-end gap-4 overflow-hidden lg:absolute lg:bottom-120 lg:left-112 xl:left-10">
@@ -263,7 +263,7 @@ const Home = () => {
               width={176}
               height={196}
               className="shadow-sales w-98 h-108 lg:w-128 lg:h-138 xl:w-176 xl:h-196"
-              loading="lazy"
+              loading="eager"
             />
             <Image
               src="images/device.svg"
@@ -351,7 +351,7 @@ const Home = () => {
             width={1029}
             height={571}
             className="absolute top-0 left-0 -z-20 w-1030 xl:w-1440 xl:-top-380"
-            loading="lazy"
+            loading="eager"
           />
           <Image
             src="images/cube-right.svg"
@@ -359,7 +359,7 @@ const Home = () => {
             width={1029}
             height={571}
             className="absolute top-52 right-0 -z-20 w-1030 xl:w-1440 xl:-top-200"
-            loading="lazy"
+            loading="eager"
           />
         </Section>
       </main>
@@ -372,7 +372,7 @@ const Home = () => {
               height={19}
               alt="logo"
               className="block sm:hidden"
-              loading="lazy"
+              loading="eager"
             />
           </Logo>
           <p className="text-neutral050 w-178 text-sd1 text-center lg:w-full lg:text-neutral400 lg:flex lg:items-center">
@@ -393,7 +393,7 @@ const Home = () => {
                 height={32}
                 alt={el.alt}
                 className="transition duration-300 hover:scale-150"
-                loading="lazy"
+                loading="eager"
               />
             ))}
           </Link>

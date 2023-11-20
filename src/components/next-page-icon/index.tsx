@@ -13,7 +13,7 @@ export const NextPageIcon = ({ className }: XIconProps) => {
       width={16}
       height={28}
       className={`hidden xl:block ${className?.toString()}`}
-      loading="lazy"
+      loading="eager"
     />
   );
 };

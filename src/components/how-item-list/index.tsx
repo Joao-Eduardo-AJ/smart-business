@@ -21,7 +21,7 @@ export const HowItemList = ({
         width={64}
         height={64}
         className="w-46 h-46 xl:w-64 xl:h-64"
-        loading="lazy"
+        loading="eager"
       />
     ) : (
       <span className="border bg-white border-neutral002 rounded-full h-46 w-46 text-primaryDefault flex items-center justify-center xl:h-64 xl:w-64 xl:text-md1">

@@ -11,7 +11,7 @@ export function LoginGoogle() {
         className="w-6 h-6"
         width={24}
         height={24}
-        loading="lazy"
+        loading="eager"
       />
       <span className="text-sd1 text-neutral100">
         {texts.LOGIN_WITH_GOOGLE}
