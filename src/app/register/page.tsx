@@ -13,9 +13,10 @@ const Register = () => {
   const [recoverPasswordModalVisible, setRecoverPasswordModalVisible] =
     useState(false);
   const texts = TextsProvider.get();
+
   return (
     <RootLayout pageRegister>
-      <main className="bg-white h-screen text-neutral050 text-sd1 lg:flex">
+      <main className="bg-white h-screen text-neutral050 text-sd1 lg:flex overflow-hidden">
         <aside className="hidden bg-primaryDefault lg:flex flex-col gap-62 pt-88 lg:px-32 xl:px-88 w-528 relative">
           <Logo logoColor="white" />
           <p className="text-white text-md2 xl:text-3.5xl w-328">
@@ -28,6 +29,7 @@ const Register = () => {
             width={284}
             height={665}
             className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10"
+            priority
           />
           <Image
             src="assets/graph.svg"
@@ -35,6 +37,7 @@ const Register = () => {
             width={439}
             height={341}
             className="absolute bottom-62 left-0 w-344 xl:w-440"
+            loading="eager"
           />
           <div className="z-20 absolute -right-18 -bottom-80 xl:-right-94">
             <AnnualProfit />

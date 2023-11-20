@@ -7,7 +7,8 @@ export const PlayButton = () => (
       alt="video"
       width={34}
       height={34}
-      className="bg-primaryDefault rounded-full w-16 h-16 lg:w-26 lg:h-26 xl:w-34 xl:h-34 "
+      className="bg-primaryDefault rounded-full w-16 h-16 lg:w-26 lg:h-26 xl:w-34 xl:h-34"
+      loading="lazy"
     />
   </div>
 );

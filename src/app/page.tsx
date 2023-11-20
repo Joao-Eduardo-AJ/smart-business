@@ -28,7 +28,7 @@ import {
 import { useState } from "react";
 import { TextsProvider } from "@/translation";
 import Image from "next/image";
-import { doubtCard, frequentlyDoubts, howWeMeth } from "@/mock";
+import { doubtCard, frequentlyDoubts, howWeMeth, socialMedias } from "@/mock";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -52,17 +52,19 @@ const Home = () => {
             width={22}
             height={19}
             alt="logo"
+            loading="lazy"
             className="block sm:hidden"
           />
         </Logo>
         <div>
           <Link href="/register">
-            <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-270 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:scale-110">
+            <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-300 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:scale-110">
               <Image
                 src="icons/person.svg"
                 alt="register"
                 width={20}
                 height={20}
+                loading="lazy"
               />
               <span className="font-semibold text-sd1">
                 {texts.ACCESS_BUTTON}
@@ -95,6 +97,7 @@ const Home = () => {
                   alt="register"
                   width={28}
                   height={28}
+                  loading="lazy"
                 />
                 <p className="font-semibold text-neutral500">
                   {texts.ABOVE_SUBTITLE}
@@ -102,7 +105,7 @@ const Home = () => {
               </div>
               <h1 className="text-3.5xl leading-10 text-center h-110 sd:h-80 text-neutral700 lg:text-left lg:text-6xl/tight lg:h-116 xl:text-xl1">
                 {texts.MAIN_TITLE}
-                <span className="underline underline-offset-0 decoration-primaryDefault text-neutral700 lg:underline-offset-1">
+                <span className="underline xl:underline-offset-0 decoration-primaryDefault text-neutral700 lg:underline-offset-1">
                   <Writer />
                 </span>
               </h1>
@@ -131,10 +134,17 @@ const Home = () => {
             width={112}
             height={56}
             className="absolute top-0 left-0"
+            loading="lazy"
           />
           <div className="flex flex-col items-center gap-4 xl:items-start">
             <div className="flex flex-col items-center gap-2 xl:items-start xl:gap-4 xl:pt-2">
-              <Image src="icons/quote.svg" alt="quote" width={22} height={18} />
+              <Image
+                src="icons/quote.svg"
+                alt="quote"
+                width={22}
+                height={18}
+                loading="lazy"
+              />
               <p className="text-nm text-center max-w-md xl:text-start xl:max-w-none xl:w-440 xl:text-md1">
                 {texts.FEEDBACK_QUOTE}
               </p>
@@ -162,6 +172,7 @@ const Home = () => {
                 width={38}
                 height={0}
                 className="my-32"
+                loading="lazy"
               />
               <p className="text-nm leading-4">{texts.EXPANDING_TERRITORY}</p>
             </div>
@@ -172,6 +183,7 @@ const Home = () => {
             width={120}
             height={120}
             className="absolute -bottom-80 -right-40 lg:bottom-0 lg:right-0"
+            loading="lazy"
           />
         </section>
         <Section>
@@ -195,6 +207,7 @@ const Home = () => {
                 width={696}
                 height={376}
                 className="shadow-video w-328 h-auto lg:w-560 xl:w-696 lg:shadow-videoXl"
+                loading="lazy"
               />
               <PlayButton />
             </figure>
@@ -240,6 +253,7 @@ const Home = () => {
               width={2.5}
               height={322}
               className="absolute w-0.2 xl:w-0.25 top-0 left-21 -z-10 xl:left-30"
+              loading="lazy"
             />
           </ul>
           <figure className="flex items-end gap-4 overflow-hidden lg:absolute lg:bottom-120 lg:left-112 xl:left-10">
@@ -249,6 +263,7 @@ const Home = () => {
               width={176}
               height={196}
               className="shadow-sales w-98 h-108 lg:w-128 lg:h-138 xl:w-176 xl:h-196"
+              loading="lazy"
             />
             <Image
               src="images/device.svg"
@@ -256,6 +271,7 @@ const Home = () => {
               width={354}
               height={344}
               className="bg-neutral001 w-278 h-254 lg:w-240 lg:h-220 xl:w-352 xl:h-344"
+              loading="eager"
             />
           </figure>
         </Section>
@@ -335,6 +351,7 @@ const Home = () => {
             width={1029}
             height={571}
             className="absolute top-0 left-0 -z-20 w-1030 xl:w-1440 xl:-top-380"
+            loading="lazy"
           />
           <Image
             src="images/cube-right.svg"
@@ -342,6 +359,7 @@ const Home = () => {
             width={1029}
             height={571}
             className="absolute top-52 right-0 -z-20 w-1030 xl:w-1440 xl:-top-200"
+            loading="lazy"
           />
         </Section>
       </main>
@@ -354,6 +372,7 @@ const Home = () => {
               height={19}
               alt="logo"
               className="block sm:hidden"
+              loading="lazy"
             />
           </Logo>
           <p className="text-neutral050 w-178 text-sd1 text-center lg:w-full lg:text-neutral400 lg:flex lg:items-center">
@@ -366,34 +385,17 @@ const Home = () => {
             target="_blank"
             className="flex gap-16"
           >
-            <Image
-              src="icons/twitter.svg"
-              width={32}
-              height={32}
-              alt="twitter"
-              className="transition duration-300 hover:scale-150"
-            />
-            <Image
-              src="icons/linkedin.svg"
-              width={32}
-              height={32}
-              alt="twitter"
-              className="transition duration-300 hover:scale-150"
-            />
-            <Image
-              src="icons/instagram.svg"
-              width={32}
-              height={32}
-              alt="twitter"
-              className="transition duration-300 hover:scale-150"
-            />
-            <Image
-              src="icons/facebook.svg"
-              width={32}
-              height={32}
-              alt="twitter"
-              className="transition duration-300 hover:scale-150"
-            />
+            {socialMedias.map((el, index) => (
+              <Image
+                key={index}
+                src={el.src}
+                width={32}
+                height={32}
+                alt={el.alt}
+                className="transition duration-300 hover:scale-150"
+                loading="lazy"
+              />
+            ))}
           </Link>
         </div>
         <div className="flex items-center text-neutral050 text-sd1 lg:text-neutral400 lg:text-center gap-1">

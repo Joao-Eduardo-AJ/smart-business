@@ -21,9 +21,15 @@ export const NewsCard = ({
   avatarSrc,
   ...props
 }: INewsCard) => (
-  <div {...props} className="flex flex-col gap-24 w-272">
+  <article {...props} className="flex flex-col gap-24 w-272">
     <figure className="w-272">
-      <Image src={newsPhotoSrc} alt={newsSubject} width={280} height={340} />
+      <Image
+        src={newsPhotoSrc}
+        alt={newsSubject}
+        width={280}
+        height={340}
+        loading="eager"
+      />
     </figure>
     <div className="flex flex-col gap-3">
       <div className="flex gap-4">
@@ -42,5 +48,5 @@ export const NewsCard = ({
       avatarSize={48}
       className="bg-neutral002"
     />
-  </div>
+  </article>
 );

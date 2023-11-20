@@ -30,6 +30,7 @@ export const UserSnack = ({
         width={avatarSize}
         height={avatarSize}
         className={`rounded-full ${className}`}
+        loading="eager"
       />
       <div>
         <p className={`font-semibold ${nameTextSize || "text-nm"}`}>{name}</p>

@@ -135,3 +135,10 @@ export const doubtCard: {
     target: "_blank",
   },
 ];
+
+export const socialMedias: { src: string; alt: string }[] = [
+  { src: "icons/twitter.svg", alt: "twitter" },
+  { src: "icons/linkedin.svg", alt: "linkedin" },
+  { src: "icons/instagram.svg", alt: "instagram" },
+  { src: "icons/facebook.svg", alt: "facebook" },
+];

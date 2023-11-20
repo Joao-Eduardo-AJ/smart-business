@@ -30,6 +30,7 @@ export function RecoverPasswordModal({ open, onClose }: IRecoverPasswordModal) {
             width={224}
             height={460}
             className="rounded-l-md"
+            loading="lazy"
           />
         </aside>
         <div className="px-24 py-24 flex flex-col gap-16 md:px-32 md:pt-40 md:pb-50 lg:px-50 lg:pt-80 lg:pb-100 relative md:w-full bg-white rounded-r-md">
@@ -40,6 +41,7 @@ export function RecoverPasswordModal({ open, onClose }: IRecoverPasswordModal) {
             height={14}
             className="absolute cursor-pointer right-24 top-34 md:right-48 md:top-44"
             onClick={() => onClose()}
+            loading="eager"
           />
           <div>
             <p className="text-md2 font-semibold lg:text-3.5xl">

@@ -38,6 +38,7 @@ export function DoubtAccordion({ index, title, content }: IDoubtAccordion) {
           className={`transition-all duration-300 top-2 right-0 absolute lg:top-4 xl:top-3 ${
             expanded && "p-2"
           }`}
+          loading="lazy"
         />
 
         <Image
@@ -48,6 +49,7 @@ export function DoubtAccordion({ index, title, content }: IDoubtAccordion) {
           className={`transition-all duration-300 top-3 right-0 absolute lg:top-4 xl:top-4 ${
             !expanded && "p-2"
           }`}
+          loading="lazy"
         />
       </div>
     </div>
