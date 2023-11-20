@@ -105,7 +105,7 @@ const Home = () => {
               </div>
               <h1 className="text-3.5xl leading-10 text-center h-110 sd:h-80 text-neutral700 lg:text-left lg:text-6xl/tight lg:h-116 xl:text-xl1">
                 {texts.MAIN_TITLE}
-                <span className="underline xl:underline-offset-0 decoration-primaryDefault text-neutral700 lg:underline-offset-1">
+                <span className="underline decoration-primaryDefault text-neutral700 lg:underline-offset-1">
                   <Writer />
                 </span>
               </h1>

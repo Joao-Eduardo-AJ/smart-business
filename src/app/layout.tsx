@@ -21,7 +21,7 @@ export default function RootLayout({ children, pageRegister }: IRootLayout) {
           content="Empresa de consultoria de tecnologia com foco em estratégia digital, marketing de conteúdo, SEO, SEM, PPC, mídias sociais e muito mais."
         />
         <title>Smart Business</title>
-        <link rel="icon" href="icons/logo.png"></link>
+        <link rel="icon" href="icons/logo.ico"></link>
       </head>
       <body
         className={`bg-neutral001 relative ${
