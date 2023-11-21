@@ -118,7 +118,7 @@ const Home = () => {
             alt="some happy guy"
             width={736}
             height={736}
-            className="w-420 h-420 lg:w-660 lg:h-660 xl:w-736 xl:h-736 lg:absolute lg:right-40 lg:bottom-0 xl:absolute xl:right-90 xl:bottom-0 -z-10"
+            className="w-420 h-420 lg:w-660 lg:h-660 xl:w-736 xl:h-736 lg:absolute lg:right-40 lg:bottom-0 xl:right-90 xl:bottom-0 -z-10"
             priority
           />
           <AnnualProfit />

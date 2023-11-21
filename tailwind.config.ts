@@ -258,6 +258,7 @@ const config: Config = {
       videoXl: "0px 20px 40px -10px rgba(15, 12, 32, 0.20)",
       sales: "0px 20px 30px -20px rgba(94, 97, 118, 0.15)",
       input: "0px 24px 32px 0px rgba(205, 208, 231, 0.30)",
+      contained: "inset 0px 0px 10px 5px rgba(0, 0, 0, 0.1)",
     },
     plugins: [],
   },

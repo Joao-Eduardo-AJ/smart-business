@@ -46,7 +46,7 @@ export function MainForm({
           console.log(Error);
         } else {
           handleConfettiVisible(true);
-          setTimeout(() => handleConfettiVisible(false), 4000);
+          setTimeout(() => handleConfettiVisible(false), 5000);
           console.log(validatedData);
         }
       })
