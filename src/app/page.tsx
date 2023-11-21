@@ -1,6 +1,5 @@
 "use client";
 
-import RootLayout from "./layout";
 import {
   Button,
   Topbar,
@@ -25,7 +24,6 @@ import {
   IconChat,
   Slides,
 } from "@/components";
-import { useState } from "react";
 import { TextsProvider } from "@/translation";
 import Image from "next/image";
 import { doubtCard, frequentlyDoubts, howWeMeth, socialMedias } from "@/mock";
@@ -35,16 +33,15 @@ import "swiper/css/pagination";
 import { EmailForm } from "@/forms/EmailForm";
 import "@/forms/translationYup";
 import Link from "next/link";
+import { usePagesContext } from "@/context";
 
 const Home = () => {
-  const [topbarVisible, setTopbarVisible] = useState(true);
   const texts = TextsProvider.get();
-
-  const handleCloseTopBar = () => setTopbarVisible(false);
+  const { topbarVisible, handleTopBarVisble } = usePagesContext();
 
   return (
-    <RootLayout>
-      {topbarVisible && <Topbar onClose={handleCloseTopBar} />}
+    <div>
+      {topbarVisible && <Topbar onClose={handleTopBarVisble} />}
       <header className="flex justify-between items-center px-8 w-full bg-white h-76 sm:bg-neutral001 sm:h-42 sm:mt-40 relative lg:px-116">
         <Logo logoColor="blue">
           <Image
@@ -57,11 +54,11 @@ const Home = () => {
           />
         </Logo>
         <div>
-          <Link href="/register">
+          <Link href="/login">
             <button className="absolute right-18 top-4 sm:top-0 md:right-288 sm:right-300 lg:right-380 flex gap-3 items-center h-42 px-16 transition duration-500 hover:scale-110">
               <Image
                 src="icons/person.svg"
-                alt="register"
+                alt="login"
                 width={20}
                 height={20}
                 loading="eager"
@@ -71,7 +68,7 @@ const Home = () => {
               </span>
             </button>
           </Link>
-          <Link href="/register">
+          <Link href="/login">
             <Button.Root variant={{ type: "outlined" }}>
               <span className="font-semibold absolute left-16">
                 {texts.REGISTER_BUTTON}
@@ -94,7 +91,7 @@ const Home = () => {
               <div className="flex items-center gap-3">
                 <Image
                   src="icons/world.svg"
-                  alt="register"
+                  alt="login"
                   width={28}
                   height={28}
                   loading="eager"
@@ -407,7 +404,7 @@ const Home = () => {
           </span>
         </div>
       </footer>
-    </RootLayout>
+    </div>
   );
 };
 

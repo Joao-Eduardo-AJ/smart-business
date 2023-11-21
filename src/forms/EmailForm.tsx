@@ -8,6 +8,7 @@ import { TextsProvider } from "@/translation";
 import { FormErrors } from "@/forms/FormErrors";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { usePagesContext } from "@/context";
 
 interface IEmailForm {
   email: string;
@@ -17,6 +18,7 @@ export function EmailForm() {
   const formRef = useRef<FormHandles>(null);
   const texts = TextsProvider.get();
   const router = useRouter();
+  const { handleMainFormData } = usePagesContext();
 
   const formValidationSchema: yup.ObjectSchema<IEmailForm> = yup
     .object()
@@ -31,8 +33,8 @@ export function EmailForm() {
         if (validatedData instanceof Error) {
           console.log(Error);
         } else {
-          router.push("/register");
-          console.log(validatedData);
+          router.push("/login");
+          handleMainFormData(validatedData);
         }
       })
       .catch((errors: yup.ValidationError) => {
@@ -51,7 +53,7 @@ export function EmailForm() {
     <Form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="flex flex-col gap-16 w-full lg:w-490 lg:flex-row lg:bg-white lg:gap-0 items-center lg:pr-3"
+      className="flex flex-col gap-16 w-full lg:w-490 lg:flex-row lg:h-64 lg:bg-white lg:gap-0 items-center lg:pr-3"
     >
       <Input
         name="email"

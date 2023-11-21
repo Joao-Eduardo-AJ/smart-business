@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Archivo } from "next/font/google";
 import "./global.css";
+import { PagesProvider } from "@/context";
 
 const mainFontFamily = Archivo({
   weight: ["400", "600", "700"],
@@ -9,10 +10,9 @@ const mainFontFamily = Archivo({
 
 interface IRootLayout {
   children: ReactNode;
-  pageRegister?: boolean;
 }
 
-export default function RootLayout({ children, pageRegister }: IRootLayout) {
+export default function RootLayout({ children }: IRootLayout) {
   return (
     <html lang="pt-br" className={mainFontFamily.className}>
       <head>
@@ -21,15 +21,11 @@ export default function RootLayout({ children, pageRegister }: IRootLayout) {
           content="Empresa de consultoria de tecnologia com foco em estratégia digital, marketing de conteúdo, SEO, SEM, PPC, mídias sociais e muito mais."
         />
         <title>Smart Business</title>
-        <link rel="icon" href="icons/logo.ico"></link>
+        <link rel="icon" href="icons/logo.ico" />
       </head>
-      <body
-        className={`bg-neutral001 relative ${
-          pageRegister && "overflow-hidden"
-        }`}
-      >
-        {children}
-      </body>
+      <PagesProvider>
+        <body className="bg-neutral001">{children}</body>
+      </PagesProvider>
     </html>
   );
 }

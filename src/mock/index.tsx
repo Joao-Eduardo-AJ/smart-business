@@ -124,7 +124,7 @@ export const doubtCard: {
     alt: "make part",
     title: texts.BE_PART,
     content: texts.REGISTER_TRANSFORM,
-    href: "/register",
+    href: "/login",
   },
   {
     iconSrc: "icons/whatsapp.svg",

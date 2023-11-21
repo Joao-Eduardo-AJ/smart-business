@@ -96,7 +96,7 @@ export const Texts = {
   DB: "Design desenvolvido por",
   INSANY_DESIGN: "Insany Design",
 
-  // register page
+  // login page
   ASIDE_TITLE: "El verdadero concepto de",
   SMART_COMPANY: "Smart Company",
   BACK: "Volver",

@@ -25,7 +25,7 @@ export function ButtonGroup({ variant }: IButtonWrapper) {
 
   return (
     <div className={buttonGroup(variant)}>
-      <Link href="/register">
+      <Link href="/login">
         <Button.Root variant={{ type: "contained" }}>
           <span className="font-semibold text-md">
             {texts.BUSINESS_REGISTER_BUTTON}

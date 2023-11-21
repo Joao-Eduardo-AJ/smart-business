@@ -30,7 +30,7 @@ export function RecoverPasswordForm() {
         if (validatedData instanceof Error) {
           console.log(Error);
         } else {
-          router.push("/register");
+          router.push("/login");
           console.log(validatedData);
         }
       })

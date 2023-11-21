@@ -2,11 +2,11 @@ import CheckboxInput from "@/forms/Checkbox";
 import { Input } from "@/forms/Input";
 import { TextsProvider } from "@/translation";
 import { Form } from "@unform/web";
-import { useRef } from "react";
 import * as Button from "@/components/button";
 import * as yup from "yup";
 import { FormErrors } from "./FormErrors";
-import { FormHandles } from "@unform/core";
+import { usePagesContext } from "@/context";
+import { useEffect } from "react";
 
 export function MainForm({
   onClickForgottenPass,
@@ -14,7 +14,7 @@ export function MainForm({
   onClickForgottenPass: () => void;
 }) {
   const texts = TextsProvider.get();
-  const formRef = useRef<FormHandles>(null);
+  const { mainFormRef, emailFieldValue } = usePagesContext();
 
   interface IFormData {
     email: string;
@@ -51,13 +51,17 @@ export function MainForm({
           validationErrors[error.path] = error.message;
         });
 
-        formRef.current?.setErrors(validationErrors);
+        mainFormRef.current?.setErrors(validationErrors);
       });
   }
 
+  useEffect(() => {
+    mainFormRef.current?.setFieldValue("email", emailFieldValue);
+  }, [emailFieldValue, mainFormRef]);
+
   return (
     <Form
-      ref={formRef}
+      ref={mainFormRef}
       onSubmit={handleSubmit}
       className="flex flex-col gap-16 lg:gap-32"
     >
