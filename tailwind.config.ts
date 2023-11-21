@@ -260,6 +260,22 @@ const config: Config = {
       input: "0px 24px 32px 0px rgba(205, 208, 231, 0.30)",
       contained: "inset 0px 0px 10px 5px rgba(0, 0, 0, 0.1)",
     },
+    animation: {
+      bounceArrow: "bounceArrow 2s linear infinite",
+    },
+    keyframes: {
+      bounceArrow: {
+        "0%, 100%": {
+          transform: "translateY(0%)",
+        },
+        "25%": {
+          transform: "translateY(20%)",
+        },
+        "75%": {
+          transform: "translateY(-20%)",
+        },
+      },
+    },
     plugins: [],
   },
 };

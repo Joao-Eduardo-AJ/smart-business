@@ -24,6 +24,9 @@ interface IPageContext {
 
   handleConfettiVisible: (param: boolean) => void;
   confettiVisible: boolean;
+
+  handlePasswordVisible: () => void;
+  passwordVisible: boolean;
 }
 
 interface IPage {
@@ -43,6 +46,7 @@ export const PagesProvider = ({ children }: IPage) => {
     useState(false);
   const [emailFieldValue, setEmailFieldValue] = useState("");
   const [confettiVisible, setConfettiVisible] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const handleTopBarVisble = () => setTopbarVisible(!topbarVisible);
 
@@ -53,6 +57,8 @@ export const PagesProvider = ({ children }: IPage) => {
     setEmailFieldValue(data.email);
 
   const handleConfettiVisible = (param: boolean) => setConfettiVisible(param);
+
+  const handlePasswordVisible = () => setPasswordVisible(!passwordVisible);
 
   return (
     <PagesContext.Provider
@@ -70,6 +76,9 @@ export const PagesProvider = ({ children }: IPage) => {
 
         handleConfettiVisible,
         confettiVisible,
+
+        handlePasswordVisible,
+        passwordVisible,
       }}
     >
       {children}

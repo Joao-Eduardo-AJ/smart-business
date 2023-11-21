@@ -8,6 +8,7 @@ import { FormErrors } from "./FormErrors";
 import { usePagesContext } from "@/context";
 import { useEffect } from "react";
 import Confetti from "@/components/confetti";
+import Image from "next/image";
 
 export function MainForm({
   onClickForgottenPass,
@@ -20,6 +21,8 @@ export function MainForm({
     emailFieldValue,
     confettiVisible,
     handleConfettiVisible,
+    handlePasswordVisible,
+    passwordVisible,
   } = usePagesContext();
 
   interface IFormData {
@@ -32,8 +35,9 @@ export function MainForm({
     password: yup
       .string()
       .required()
+      .min(8)
       .matches(
-        /^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&*])[A-Za-z\d!@#$%&*]*$/
       ),
   });
 
@@ -84,12 +88,34 @@ export function MainForm({
       </label>
       <label>
         {texts.PASSWORD_INPUT_LABEL}
-        <Input
-          name="password"
-          placeholder={texts.PASSWORD_INPUT_PLACEHOLDER}
-          variant={{ type: "outlined" }}
-          type="password"
-        />
+        <div className="relative">
+          <Input
+            name="password"
+            placeholder={texts.PASSWORD_INPUT_PLACEHOLDER}
+            variant={{ type: "outlined" }}
+            type={passwordVisible ? "text" : "password"}
+          />
+          <Image
+            src="/icons/opened-eye.png"
+            alt="see password"
+            width={17}
+            height={17}
+            className={`transition-all duration-200 absolute right-16 top-1/2 -translate-y-1/2 cursor-pointer h-16 ${
+              passwordVisible ? "py-16" : "py-0"
+            }`}
+            onClick={() => handlePasswordVisible()}
+          />
+          <Image
+            src="/icons/closed-eye.png"
+            alt="see password"
+            width={17}
+            height={17}
+            className={`transition-all duration-200 absolute right-16 top-1/2 -translate-y-1/2 cursor-pointer h-16 ${
+              passwordVisible ? "py-0" : "py-16"
+            }`}
+            onClick={() => handlePasswordVisible()}
+          />
+        </div>
       </label>
       <div className="flex justify-between">
         <CheckboxInput

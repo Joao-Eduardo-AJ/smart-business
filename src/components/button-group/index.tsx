@@ -8,7 +8,7 @@ const buttonGroup = tv({
   variants: {
     type: {
       prime: "lg:flex-row lg:w-240 lg:gap-2 lg:mb-300 xl:mb-0",
-      doubt: "lg:w-236",
+      doubt: "lg:w-236 gap-2",
     },
   },
   defaultVariants: {

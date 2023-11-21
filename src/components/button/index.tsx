@@ -8,9 +8,9 @@ const button = tv({
   base: "px-2 flex items-center justify-center gap-3 transition-all duration-500",
   variants: {
     type: {
-      text: "h-56 min-w-full text-neutral500 hover:scale-110 z-10",
+      text: "h-56 min-w-full text-neutral500 hover:-translate-y-1 z-10",
       contained:
-        "bg-primaryDefault text-white h-56 min-w-full hover:shadow-contained",
+        "bg-primaryDefault text-white h-56 min-w-full hover:shadow-contained hover:-translate-y-1",
       outlined:
         "border overflow-hidden border-primaryDefault w-226 h-42 text-primaryDefault relative hidden sm:flex hover:bg-primaryDefault hover:text-white hover:w-260",
       dark: "bg-primaryDefault text-white min-w-full h-56 lg:min-w-0 px-24 lg:w-150 lg:h-42 hover:shadow-contained",

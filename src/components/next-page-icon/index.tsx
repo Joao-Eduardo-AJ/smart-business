@@ -7,13 +7,15 @@ interface XIconProps {
 
 export const NextPageIcon = ({ className }: XIconProps) => {
   return (
-    <Image
-      src="icons/arrow-down.svg"
-      alt="arrow down"
-      width={16}
-      height={28}
-      className={`hidden xl:block ${className?.toString()}`}
-      loading="eager"
-    />
+    <div className={`relative h-30 ${className?.toString()}`}>
+      <Image
+        src="icons/arrow-down.svg"
+        alt="arrow down"
+        width={16}
+        height={28}
+        className={`hidden xl:block hover:animate-bounceArrow`}
+        loading="eager"
+      />
+    </div>
   );
 };
