@@ -21,6 +21,9 @@ interface IPageContext {
 
   handleMainFormData: (data: { email: string }) => void;
   emailFieldValue: string;
+
+  handleConfettiVisible: (param: boolean) => void;
+  confettiVisible: boolean;
 }
 
 interface IPage {
@@ -39,12 +42,17 @@ export const PagesProvider = ({ children }: IPage) => {
   const [recoveryPassModalVisible, setRecoveryPassModalVisible] =
     useState(false);
   const [emailFieldValue, setEmailFieldValue] = useState("");
+  const [confettiVisible, setConfettiVisible] = useState(false);
 
   const handleTopBarVisble = () => setTopbarVisible(!topbarVisible);
+
   const handleRecoveryVisible = () =>
     setRecoveryPassModalVisible(!recoveryPassModalVisible);
+
   const handleMainFormData = (data: { email: string }) =>
     setEmailFieldValue(data.email);
+
+  const handleConfettiVisible = (param: boolean) => setConfettiVisible(param);
 
   return (
     <PagesContext.Provider
@@ -59,6 +67,9 @@ export const PagesProvider = ({ children }: IPage) => {
 
         handleMainFormData,
         emailFieldValue,
+
+        handleConfettiVisible,
+        confettiVisible,
       }}
     >
       {children}

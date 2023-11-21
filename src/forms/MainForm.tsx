@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { FormErrors } from "./FormErrors";
 import { usePagesContext } from "@/context";
 import { useEffect } from "react";
+import Confetti from "@/components/confetti";
 
 export function MainForm({
   onClickForgottenPass,
@@ -14,12 +15,16 @@ export function MainForm({
   onClickForgottenPass: () => void;
 }) {
   const texts = TextsProvider.get();
-  const { mainFormRef, emailFieldValue } = usePagesContext();
+  const {
+    mainFormRef,
+    emailFieldValue,
+    confettiVisible,
+    handleConfettiVisible,
+  } = usePagesContext();
 
   interface IFormData {
     email: string;
     password: string;
-    remember: boolean;
   }
 
   const formValidationSchema: yup.ObjectSchema<IFormData> = yup.object().shape({
@@ -30,16 +35,18 @@ export function MainForm({
       .matches(
         /^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
       ),
-    remember: yup.boolean().required(),
   });
 
   function handleSubmit(data: IFormData) {
     formValidationSchema
       .validate(data, { abortEarly: false })
       .then(validatedData => {
+        console.log(data);
         if (validatedData instanceof Error) {
           console.log(Error);
         } else {
+          handleConfettiVisible(true);
+          setTimeout(() => handleConfettiVisible(false), 4000);
           console.log(validatedData);
         }
       })
@@ -66,6 +73,7 @@ export function MainForm({
       className="flex flex-col gap-16 lg:gap-32"
     >
       <p className="text-neutral200 text-3.5xl">{texts.LOGIN}</p>
+      {confettiVisible && <Confetti />}
       <label>
         {texts.EMAIL_INPUT_LABEL}
         <Input

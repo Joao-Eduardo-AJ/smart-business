@@ -27,18 +27,16 @@ const CheckboxInput = ({ name, label }: CheckboxInputProps) => {
   }, [registerField, fieldName]);
 
   return (
-    <div className="">
-      <label htmlFor={label} className="flex gap-2 text-sd1 text-neutral050">
-        <input
-          id={label}
-          name={name}
-          ref={inputRef}
-          type="checkbox"
-          className="w-16 h-16"
-        />
-        {label}
-      </label>
-    </div>
+    <label htmlFor={label} className="flex gap-2 text-sd1 text-neutral050">
+      <input
+        id={label}
+        name={name}
+        ref={inputRef}
+        type="checkbox"
+        className="w-16 h-16"
+      />
+      {label}
+    </label>
   );
 };
 
