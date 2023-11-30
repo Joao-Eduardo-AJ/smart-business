@@ -88,13 +88,13 @@ export function MainForm({
       </label>
       <label>
         {texts.PASSWORD_INPUT_LABEL}
-        <div className="relative h-58">
-          <Input
-            name="password"
-            placeholder={texts.PASSWORD_INPUT_PLACEHOLDER}
-            variant={{ type: "outlined" }}
-            type={passwordVisible ? "text" : "password"}
-          />
+        <Input
+          name="password"
+          placeholder={texts.PASSWORD_INPUT_PLACEHOLDER}
+          variant={{ type: "outlined" }}
+          type={passwordVisible ? "text" : "password"}
+          position="right"
+        >
           <Image
             src="/icons/opened-eye.png"
             alt="see password"
@@ -115,7 +115,7 @@ export function MainForm({
             }`}
             onClick={() => handlePasswordVisible()}
           />
-        </div>
+        </Input>
       </label>
       <div className="flex justify-between">
         <CheckboxInput

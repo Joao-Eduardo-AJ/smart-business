@@ -22,8 +22,15 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   children?: ReactNode;
   variant?: VariantProps<typeof input>;
   name: string;
+  position?: "left" | "right";
 }
-export const Input = ({ name, variant, children, ...props }: InputProps) => {
+export const Input = ({
+  name,
+  variant,
+  children,
+  position,
+  ...props
+}: InputProps) => {
   const { fieldName, registerField, error, clearError } = useField(name);
   const inputRef = useRef(null);
 
@@ -46,11 +53,11 @@ export const Input = ({ name, variant, children, ...props }: InputProps) => {
   return (
     <div className="flex flex-col w-full gap-1 h-full">
       <div
-        className={`flex bg-white ${variant?.type !== "outlined" && "pl-20"} ${
-          variant?.type === "text" && "shadow-input"
-        }`}
+        className={`flex bg-white relative ${
+          variant?.type !== "outlined" && "pl-20"
+        } ${variant?.type === "text" && "shadow-input"}`}
       >
-        {children}
+        {position === "left" || !position ? children : undefined}
         <input
           {...props}
           ref={inputRef}
@@ -58,6 +65,7 @@ export const Input = ({ name, variant, children, ...props }: InputProps) => {
           onFocus={() => error && clearError()}
           onKeyDown={() => error && clearError()}
         />
+        {position === "right" && children}
       </div>
       <span
         className={`text-auxiliaryRed text-sd2 text-left ${
