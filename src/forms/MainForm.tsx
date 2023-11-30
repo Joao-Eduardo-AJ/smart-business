@@ -88,7 +88,7 @@ export function MainForm({
       </label>
       <label>
         {texts.PASSWORD_INPUT_LABEL}
-        <div className="relative">
+        <div className="relative h-58">
           <Input
             name="password"
             placeholder={texts.PASSWORD_INPUT_PLACEHOLDER}

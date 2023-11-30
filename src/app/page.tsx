@@ -361,7 +361,7 @@ const Home = () => {
         </Section>
       </main>
       <footer className="flex flex-col gap-32 py-64 items-center lg:flex-row lg:justify-between lg:px-112">
-        <div className="flex flex-col gap-24 lg:flex-row lg:justify-between xl:gap-80">
+        <div className="flex flex-col gap-24 items-center lg:flex-row lg:justify-between xl:gap-80">
           <Logo logoColor="blue" variant={{ type: "footer" }}>
             <Image
               src="icons/logo.svg"
